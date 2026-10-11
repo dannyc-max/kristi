@@ -30,8 +30,6 @@ Print it at 100% (there's a 1-inch test square on the page to check).
 - New techniques as I add them to the Stitch Library
 - Where to find me in person
 
-**About the name.** It's a line from an old horror movie, flipped. The scary thing was never outside. It was always right here in the house: people at the kitchen table with scissors, scraps and something to say. Quilting has always been where people talk freely while their hands are busy, and I make my work in that spirit. Soft materials, loud opinions.
-
 If you make the bookmarks, I'd love to see them. Tag me on Instagram at [@artiscomingfrominsidethehouse](https://www.instagram.com/artiscomingfrominsidethehouse/) or just hit reply. I read everything.
 
 Talk soon,
