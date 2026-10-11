@@ -1,4 +1,4 @@
-# Calls from Inside the House: mailing list, pricing and content plan
+# Newsletter, pricing and content plan
 
 Fall 2026 into spring 2027. The Apple Harvest Festival (Sat Oct 17, downtown Waynesville) is the first big day for collecting emails.
 

@@ -3,9 +3,9 @@
 Sent automatically to every new subscriber. Set it up once in your email tool (MailerLite, Kit, etc.) as the welcome or "new subscriber" automation, with the bookmark PDF attached or linked.
 
 **Subject line options**
-1. The call is coming from inside the house
-2. You picked up. Here's your free pattern.
-3. Your Ridgeline Bookmarks pattern is inside
+1. Your Ridgeline Bookmarks pattern is inside
+2. Here's your free pattern
+3. Thanks for signing up
 
 **Preview text:** Three bookmarks from one little landscape, plus what you just signed up for.
 
@@ -13,7 +13,7 @@ Sent automatically to every new subscriber. Set it up once in your email tool (M
 
 Hi [First name],
 
-You picked up the phone. Welcome to Calls from Inside the House.
+Thanks for signing up for the newsletter.
 
 I'm Kristi. I make art quilts, hand-dyed cloth and table linens, all made in the house. If we met at the Apple Harvest Festival in Waynesville, thanks for stopping by the booth and touching everything. That's what it's there for.
 
