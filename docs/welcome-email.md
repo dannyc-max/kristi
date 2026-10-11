@@ -15,27 +15,27 @@ Hi [First name],
 
 Thanks for signing up for the newsletter.
 
-I'm Kristi. I make art quilts, hand-dyed cloth and table linens, all made in the house. If we met at the Apple Harvest Festival in Waynesville, thanks for stopping by the booth and touching everything. That's what it's there for.
+I'm Kristi. I make art quilts, hand-dyed cloth and table linens, all made in the house. If we met at the Apple Harvest Festival in Waynesville, thank you for visiting the booth.
 
 **Here's your free pattern: [Ridgeline Bookmarks (PDF)](LINK)**
 
-It's one little landscape, about 6 inches square, that you glue, stitch and cut into three 2″ × 6″ bookmarks. No interfacing and no fussy edges: layer your fabrics with a glue stick, let it dry, stitch by machine or by hand, then cut and zigzag. Scraps are perfect for it. Make one set for yourself and two for gifts.
+A miniature landscape, about 6 inches square, layered with a glue stick, stitched by machine or by hand, then cut into three 2″ × 6″ bookmarks and finished with a zigzag edge. It works well with fabric remnants and makes a thoughtful gift.
 
 Print it at 100% (there's a 1-inch test square on the page to check).
 
 **What you signed up for**
 
-- An email every month or so, only when there's something worth saying
-- First look at new runners and placemats before they go on Etsy
+- Occasional notes from the studio
+- Early access to new runners and placemats
 - New techniques as I add them to the Stitch Library
-- Where to find me in person
+- Upcoming fairs and exhibitions
 
-If you make the bookmarks, I'd love to see them. Tag me on Instagram at [@artiscomingfrominsidethehouse](https://www.instagram.com/artiscomingfrominsidethehouse/) or just hit reply. I read everything.
+If you make the bookmarks, I'd be glad to see them. Tag [@artiscomingfrominsidethehouse](https://www.instagram.com/artiscomingfrominsidethehouse/) on Instagram, or reply to this email.
 
-Talk soon,
+Warmly,
 Kristi
 
-P.S. If the bookmarks make you want more, the full 10″ × 10″ [Landscape Art Quilt pattern](https://www.etsy.com/shop/ArtHouseArtQuilts) has a lot more direction on process, plus couching, wool roving under tulle, sequin mesh, French knots and other hand embroidery.
+P.S. The full 10″ × 10″ [Landscape Art Quilt pattern](https://www.etsy.com/shop/ArtHouseArtQuilts) has a lot more direction on process, plus couching, wool roving under tulle, sequin mesh, French knots and other hand embroidery.
 
 ---
 
