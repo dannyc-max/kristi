@@ -15,7 +15,7 @@ Hi [First name],
 
 You picked up the phone. Welcome to Calls from Inside the House.
 
-I'm Kristi. I make art quilts, hand-dyed cloth and table linens at home in the Blue Ridge. If we met at the Apple Harvest Festival in Waynesville, thanks for stopping by the booth and touching everything. That's what it's there for.
+I'm Kristi. I make art quilts, hand-dyed cloth and table linens, all made in the house. If we met at the Apple Harvest Festival in Waynesville, thanks for stopping by the booth and touching everything. That's what it's there for.
 
 **Here's your free pattern: [Ridgeline Bookmarks (PDF)](LINK)**
 
@@ -42,7 +42,7 @@ P.S. If the bookmarks make you want more, the full 10″ × 10″ [Landscape Art
 ---
 
 *Footer (your email tool adds the unsubscribe link and mailing address automatically):*
-The Art is Coming from Inside the House · Kristi Coriden · Western North Carolina
+The Art is Coming from Inside the House
 [Website](https://theartiscomingfrominsidethehouse.com) · [Etsy](https://www.etsy.com/shop/ArtHouseArtQuilts) · [Instagram](https://www.instagram.com/artiscomingfrominsidethehouse/)
 
 ---
