@@ -131,6 +131,32 @@ h2{margin:0;font-weight:900;line-height:1.05}
 .T .price{font-size:26pt}
 .T .scissors{width:.75in}
 .T .who{font-size:7pt}
+/* logo-in-the-middle layout (all tags except the throws) */
+.tag.mid{gap:3pt}
+.mid h2{order:0}
+.logo-zone{flex:1 1 auto;display:grid;place-items:center;width:100%;min-height:0}
+.wm.stack{display:flex;flex-direction:column;align-items:center;gap:3pt}
+.wm.stack .row{display:flex;justify-content:center;gap:3pt}
+.wm.stack span{padding:2pt 5pt}
+.bottom{display:flex;align-items:flex-end;justify-content:space-between;width:100%;gap:6pt}
+.bottom .who{text-align:left}
+.bottom .price{text-align:right}
+.L .mid .needle,.M .mid .needle{height:6pt}
+.L .mid h2{font-size:14pt}
+.L .mid .lines{font-size:8pt}
+.L .wm.stack{font-size:17pt}
+.L .bottom .price{font-size:18pt}
+.L .bottom .scissors{width:.55in}
+.L .bottom .who{font-size:5.6pt}
+.M .tag.mid{gap:2pt}
+.M .mid h2{font-size:9.5pt}
+.M .mid .lines{font-size:6.4pt}
+.M .wm.stack{font-size:11.5pt;gap:2pt}
+.M .wm.stack .row{gap:2pt}
+.M .wm.stack span{padding:1.2pt 3.2pt}
+.M .bottom .price{font-size:13pt}
+.M .bottom .scissors{width:.38in}
+.M .bottom .who{font-size:4.2pt}
 """
 
 FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=Fraunces:ital,opsz,wght@1,9..144,700&family=Special+Elite&display=swap">'
@@ -146,8 +172,31 @@ def tag(item, extra=""):
     )
 
 
-def page(cls, cols, items, note):
-    cells = "".join(tag(i) for i in items)
+WORDS = {"THE": "w1", "ART": "w2", "is": "w3", "COMING": "w4", "from": "w5", "INSIDE": "w6", "the": "w7", "HOUSE": "w8"}
+ROWS3 = [["THE", "ART", "is"], ["COMING", "from"], ["INSIDE", "the", "HOUSE"]]
+ROWS4 = [["THE", "ART"], ["is", "COMING"], ["from", "INSIDE"], ["the", "HOUSE"]]
+
+
+def stacked_logo(rows):
+    """The logo stacked into rows so it reads as a squarer block."""
+    body = "".join('<div class="row">' + "".join(f'<span class="{WORDS[w]}">{w}</span>' for w in r) + "</div>" for r in rows)
+    return f'<div class="wm stack" aria-label="The Art is Coming from Inside the House">{body}</div>'
+
+
+def tag_mid(item, rows):
+    """Name, then description, then the logo filling the middle, then price, scissors and maker."""
+    lines = "<br>".join(escape(l) for l in item["lines"])
+    return (
+        f'<div class="tag mid">{NEEDLE}'
+        f'<h2>{escape(item["title"])}</h2><p class="lines">{lines}</p>'
+        f'<div class="logo-zone">{stacked_logo(rows)}</div>'
+        f'<div class="bottom"><div class="who">{ARTIST}<br><span class="hd">{HANDLE}</span><br>CORIDEN #{item["n"]}</div>'
+        f'{SCISSORS}<div class="price">${item["price"]}</div></div></div>'
+    )
+
+
+def page(cls, cols, items, note, rows=ROWS3):
+    cells = "".join(tag_mid(i, rows) for i in items)
     return (f'<section class="page {cls}"><p class="note">{escape(note)}</p>'
             f'<div class="grid" style="grid-template-columns:repeat({cols},auto)">{cells}</div></section>')
 
@@ -179,22 +228,21 @@ cells = []
 for i in range(10):
     col, row = i % 2, i // 2
     left, top = 0.15625 + col * (4 + 0.1875), 0.5 + row * 2
-    cells.append(f'<div class="cell" style="left:{left}in;top:{top}in"><div class="rot">{tag(BOOKMARK)}</div></div>')
+    cells.append(f'<div class="cell" style="left:{left}in;top:{top}in"><div class="rot">{tag_mid(BOOKMARK, ROWS4)}</div></div>')
 bm_css = """
 .B{display:block;overflow:hidden}
 .B .cell{position:absolute;width:4in;height:2in}
 .B .rot{position:absolute;left:1in;top:-1in;width:2in;height:4in;transform:rotate(90deg)}
 .B .tag{width:2in;height:4in;border:0;gap:5pt;padding:.16in .14in}
-.B .needle{height:8pt}
-.B .wm{font-size:6pt;gap:1.6pt 2pt}
-.B .wm span{padding:.8pt 2pt}
-.B h2{font-size:15pt}
+.B .needle{height:7pt}
+.B h2{font-size:16pt}
 .B .lines{font-size:8.5pt}
-.B .price{font-size:20pt}
-.B .scissors{width:.6in}
-.B .who{font-size:5.6pt}
-.B .sep{display:none}
-.B .hd{display:block}
+.B .wm.stack{font-size:15pt;gap:4pt}
+.B .wm.stack .row{gap:3pt}
+.B .bottom{flex-direction:column;align-items:center;gap:3pt}
+.B .bottom .who{order:3;text-align:center;font-size:5.4pt}
+.B .bottom .scissors{order:2;width:.55in}
+.B .bottom .price{order:1;font-size:20pt;text-align:center}
 """
 bookmarks = doc("SHCG Bookmark Labels", (
     '<style>' + bm_css + '</style><section class="page B"><p class="note">Avery 8363 · 2 x 4 in labels · print at 100% · '
