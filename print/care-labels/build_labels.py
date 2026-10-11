@@ -16,8 +16,6 @@ KINDS = {
     "ice_purse": ("Ice-dyed linen purse", "Linen, lined with denim", ["Spot clean only.", "Do not machine wash.", FADE]),
     "upholstery": ("Upholstery purse", "Upholstery fabric", ["Spot clean only.", "Do not machine wash."]),
     "treat_bag": ("Trick-or-treat bag", "Fabric", ["Spot clean, or wash cold", "and line dry."]),
-    "wall_art": ("Art quilt", "For display", ["Do not wash.", "Dust with a soft brush, or vacuum on low through a mesh screen.",
-                                              "Hang out of direct sun to keep colors bright."]),
 }
 
 # Counts for both booths (SHCG inventory list + Waynesville assortment plan). Edit and re-run.
@@ -29,9 +27,8 @@ SHEETS = [
      + ["ice_purse"] * 1      # linen ice dye purse (SHCG)
      + ["upholstery"] * 4     # 2 upholstery purses (SHCG) + 2 clutches (Waynesville)
      + ["throw"]),            # 1 spare
-    ("Sheet 2 of 2 · trick-or-treat bags & wall art",
-     ["treat_bag"] * 7        # Waynesville
-     + ["wall_art"] * 8),     # Graybeard, Ace of Cups, sample, 2 small art quilts, Green Man, + 2 for sawtooth pieces
+    ("Sheet 2 of 2 · trick-or-treat bags · keep the unused bottom",
+     ["treat_bag"] * 7),      # Waynesville
 ]
 
 CSS = """
@@ -39,7 +36,7 @@ CSS = """
 *{box-sizing:border-box}
 html,body{margin:0;background:#fff;color:#000;font-family:"Archivo",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{width:8.5in;height:11in;position:relative;display:grid;place-items:center;page-break-after:always}
-.page:last-child{page-break-after:auto}
+.page:last-child{page-break-after:auto;place-items:start center;padding-top:.4in}
 .note{position:absolute;top:.15in;left:0;right:0;text-align:center;font-family:"Special Elite",monospace;font-size:7pt;color:#777}
 .grid{display:grid;grid-template-columns:repeat(3,2.5in);border-top:.5pt dashed #888;border-left:.5pt dashed #888}
 .cut{width:2.5in;height:2in;border-right:.5pt dashed #888;border-bottom:.5pt dashed #888;padding:.25in;position:relative}
