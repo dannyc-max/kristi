@@ -13,7 +13,7 @@ Static site, no build step. Open `index.html` in a browser.
 - `docs/welcome-email.md`: welcome email draft
 
 ## To do before it goes live
-- Confirm titles for the sold pieces (working titles: Sequin Sky, Wildflower Sunset, Night Meadow, Hand-Dyed Ridges)
+- Confirm titles for the sold pieces (working titles: After The Flood, Wildflower Sunset, Night Meadow, Hand-Dyed Ridges)
 - Photos still needed: runners, placemats, Ace of Cups, Graybeard, and the turned edge, roving and hand-stitch cards
 - Fill in the `[PRICE]` placeholders (runners, placemats, kits, Green Man, Noel)
 - Paste the email tool's form URL into `SIGNUP_URL` at the bottom of `index.html`
