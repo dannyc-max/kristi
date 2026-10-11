@@ -14,7 +14,7 @@ Static site, no build step. Open `index.html` in a browser.
 
 ## To do before it goes live
 - Photos still needed: runners, placemats, Ace of Cups, Graybeard, and the turned edge, roving and hand-stitch cards
-- Fill in the `[PRICE]` placeholders (runners, placemats, kits, Green Man, Noel)
+- Prices are left off the site on purpose until there is online shopping or Etsy listings
 - Paste the email tool's form URL into `SIGNUP_URL` at the bottom of `index.html`
 - Swap in real Instagram reel and YouTube links (Tapes from the basement, Stitch Library "Watch" links)
 - Add the 2012 upcycling posts to the journal
