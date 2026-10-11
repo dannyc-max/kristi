@@ -12,7 +12,7 @@ HANDLE = "@artiscomingfrominsidethehouse"
 # From the SHCG inventory list sent to Local Cloth (Oct 9). n = line on the list.
 ART = [  # sheet 1: large tags, 4 x 2.5 in, to stick on cardstock or the back of a piece
     dict(n=1, title="Graybeard Mtn Panoramic", lines=["Art quilt · 33 × 35 in", "Upcycled denim, hand-dyed linen & cotton double gauze"], price=770),
-    dict(n=2, title="Ace of Cups", lines=["Art quilt · tarot series · 18 × 24 in"], price=650),
+    dict(n=2, title="Ace of Cups", lines=["Art quilt · tarot series · 18 × 24 in", "Signed in thread: KJC"], price=650),
     dict(n=3, title="Landscape Art Quilt Sample", lines=["Made from the pattern, with binding", "and a macramé dowel hanger"], price=160),
     dict(n=4, title="Small Art Quilt", lines=["Landscape art quilt", "Smaller than 15 × 15 in"], price=250),
     dict(n=4, title="Small Art Quilt", lines=["Landscape art quilt", "Smaller than 15 × 15 in"], price=250),
@@ -163,8 +163,10 @@ stickers = doc("SHCG Sticker Tags", "".join([
 ]))
 open("sticker-sheets.html", "w").write(stickers)
 
-care = ('<p class="care">Colorway: ______________________<br><br>Hand-dyed, so every one is different.<br>'
-        'Wash cold with like colors. Tumble dry low.<br>Gets softer with every wash.</p>')
+care = ('<p class="care">Colorway: ______________________<br><br>'
+        '<b>Care:</b> Wash cold, by itself. Do not wash with anything else.<br><br>'
+        'Hand-dyed and treated with a dye fixative detergent, so colors should not bleed. '
+        'Natural fibers will lighten naturally in the sun over time.</p>')
 throw_tag = tag(THROW, '<span class="hole"></span>').replace('<div class="price">', care + '<div class="price">')
 throws = doc("SHCG Throw Tags", (
     '<section class="page T"><p class="note">Cardstock · print at 100%, black and white · cut on dashed lines, punch the circle, '
