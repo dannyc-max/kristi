@@ -4,6 +4,7 @@ Static site, no build step. Open `index.html` in a browser.
 
 - `index.html`: home (art, process, Stitch Library teaser, shop, journal, fairs, newsletter sign-up)
 - `techniques.html`: Stitch Library, one card per technique from the landscape pattern
+- `dye.html`: Dye Notes (supplies, methods, dye log, truffle post). Add a log entry per batch
 - `assets/site.css`: shared styles and brand colors
 - `assets/logo/`: logo in SVG, transparent PNG and cream PNG
 - `print/Ridgeline-Bookmarks-free-pattern.pdf`: free sign-up pattern (source: `print/bookmark-pattern.html`)
