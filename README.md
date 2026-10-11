@@ -12,8 +12,9 @@ Static site, no build step. Open `index.html` in a browser.
 - `docs/welcome-email.md`: welcome email draft
 
 ## To do before it goes live
-- Put photos in `assets/photos/` and replace the `[PHOTO: ...]` swatches
-- Fill in the `[PRICE]` placeholders (runners, placemats, kits, Ace of Cups, Green Man)
+- Confirm titles for the sold pieces (working titles: Sequin Sky, Wildflower Sunset, Night Meadow, Hand-Dyed Ridges)
+- Photos still needed: runners, placemats, Ace of Cups, Graybeard, and the turned edge, roving and hand-stitch cards
+- Fill in the `[PRICE]` placeholders (runners, placemats, kits, Green Man, Noel)
 - Paste the email tool's form URL into `SIGNUP_URL` at the bottom of `index.html`
 - Swap in real Instagram reel and YouTube links (Tapes from the basement, Stitch Library "Watch" links)
 - Add the 2012 upcycling posts to the journal
