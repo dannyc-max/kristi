@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Get the Calls</title>
+<meta name="description" content="Join the newsletter and get the free Ridgeline Bookmarks pattern.">
+<link rel="icon" href="assets/logo/The_Art_is_Coming_from_Inside_the_House_logo_transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,600;1,9..144,800&family=Special+Elite&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <nav aria-label="Main">
+    <a class="mark" href="index.html">INSIDE <i>the</i> HOUSE</a>
+    <ul>
+      <li><a href="index.html">Art</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="dye.html">Dye Notes</a></li>
+      <li><a href="techniques.html">Stitch Library</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a class="join" href="join.html" aria-current="page">Get the calls</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap" id="top">
+
+    <div class="freebie">
+      <div class="bm" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div>
+        <p class="typed">Free pattern</p>
+        <h3>Ridgeline Bookmarks</h3>
+        <p>One little landscape, glued, stitched and cut into three 2″ × 6″ bookmarks. No interfacing, beginner friendly, and a great gift. It's free when you join the list.</p>
+      </div>
+      <a class="btn" href="#signup">Get the pattern</a>
+    </div>
+
+
+  <!-- JOIN -->
+  <section id="join" class="join-box" aria-labelledby="join-h">
+    <div class="join-copy">
+      <p class="typed">The newsletter</p>
+      <h2 id="join-h">Calls from Inside the House</h2>
+      <p>An email every month or so, only when there's something worth saying: new work, where to find me, and what's on the cutting table.</p>
+      <ul>
+        <li>The free Ridgeline Bookmarks pattern the minute you sign up: three bookmarks from one little landscape</li>
+        <li>First look at new runners and placemats before they go on Etsy</li>
+        <li>New techniques for the Stitch Library</li>
+      </ul>
+    </div>
+    <form id="signup" novalidate>
+      <label for="email">YOUR EMAIL</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <label for="fname">FIRST NAME (optional)</label>
+      <input id="fname" name="fname" type="text" autocomplete="given-name">
+      <button class="btn" type="submit">Pick up the phone</button>
+      <p class="status" id="status" role="status"></p>
+      <p class="fine">No spam, no selling your address. Unsubscribe in one click.</p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 The Art is Coming from Inside the House</span>
+  <ul>
+    <li><a href="https://www.instagram.com/artiscomingfrominsidethehouse/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://www.etsy.com/shop/ArtHouseArtQuilts" target="_blank" rel="noopener">Etsy</a></li>
+    <li><a href="https://www.youtube.com/results?search_query=Kristi+Sews+Cool+Stuff" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
+</footer>
+
+</div>
+<script>
+// Sign-up form. Not connected to an email service yet: when you pick one
+// (MailerLite, Kit, Buttondown...), paste its form action URL into SIGNUP_URL.
+const SIGNUP_URL = "";
+document.getElementById("signup").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const status = document.getElementById("status");
+  const email = document.getElementById("email");
+  if (!email.value || !email.checkValidity()) {
+    status.textContent = "That email doesn't look right. Check for a typo and try again.";
+    email.focus();
+    return;
+  }
+  if (!SIGNUP_URL) {
+    status.textContent = "Sign-ups open when the site goes live. Until then, find me at the Apple Harvest Festival on Oct 17.";
+    return;
+  }
+  try {
+    const res = await fetch(SIGNUP_URL, { method: "POST", body: new FormData(e.target) });
+    if (!res.ok) throw new Error();
+    status.textContent = "You're on the list. Check your inbox for the free bookmark pattern.";
+    e.target.reset();
+  } catch {
+    status.textContent = "That didn't go through. Try again in a minute.";
+  }
+});
+</script>
+</body>
+</html>
