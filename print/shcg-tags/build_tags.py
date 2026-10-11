@@ -25,8 +25,8 @@ KIT = dict(n=6, title="Landscape Art Quilt Kit", lines=["Pattern + fabric kit", 
 # sheet 2: 15 labels, 2.625 x 2 in: 6 patterns + 5 kits on the list, plus 2 spares of each
 SHEET2 = [PATTERN] * 8 + [KIT] * 7
 BOOKMARK = dict(n=10, title="Bookmark", lines=["Stitched fabric", "art bookmark"], price=15)
-# sheet 3: 16 labels, 1.8 x 2.4 in: 6 bookmarks on the list, plus 10 for restocking
-SHEET3 = [BOOKMARK] * 16
+# Bookmarks go on one sheet of 2 x 4 in labels (Avery 8363/5163 layout, 10 per sheet):
+# 6 on the list + 4 that stay on the sheet for restocking.
 THROW = dict(n=7, title="Shibori Reversible Throw", lines=["Hand-dyed shibori, cotton", "Reversible · approx. 50 × 60 in"], price=185)
 
 WORDMARK = (
@@ -158,9 +158,8 @@ def doc(title, body):
 
 
 stickers = doc("SHCG Sticker Tags", "".join([
-    page("L", 2, ART, "Sheet 1 of 3 · art quilts & purses · Avery 5265 · print at 100%, black and white · cut on dashed lines"),
-    page("M", 3, SHEET2, "Sheet 2 of 3 · patterns (8) & kits (7), includes 2 spares of each · cut on dashed lines"),
-    page("S", 4, SHEET3, "Sheet 3 of 3 · bookmarks (16), 6 for the list + 10 for restocking · cut on dashed lines"),
+    page("L", 2, ART, "Sheet 1 of 2 · art quilts & purses · Avery 5265 · print at 100%, black and white · cut on dashed lines"),
+    page("M", 3, SHEET2, "Sheet 2 of 2 · patterns (8) & kits (7), includes 2 spares of each · cut on dashed lines"),
 ]))
 open("sticker-sheets.html", "w").write(stickers)
 
@@ -174,4 +173,31 @@ throws = doc("SHCG Throw Tags", (
     'pink ribbon · keep the unused bottom half</p>'
     f'<div class="grid" style="grid-template-columns:repeat(2,auto)">{throw_tag * 2}</div></section>'))
 open("throw-tags-cardstock.html", "w").write(throws)
+# 2 x 4 label sheet: 2 columns x 5 rows, 0.5 in top margin, 0.156 in side margin, 0.1875 in gutter.
+# Each label is printed sideways so it reads top to bottom on a 2 in wide bookmark.
+cells = []
+for i in range(10):
+    col, row = i % 2, i // 2
+    left, top = 0.15625 + col * (4 + 0.1875), 0.5 + row * 2
+    cells.append(f'<div class="cell" style="left:{left}in;top:{top}in"><div class="rot">{tag(BOOKMARK)}</div></div>')
+bm_css = """
+.B{display:block;overflow:hidden}
+.B .cell{position:absolute;width:4in;height:2in}
+.B .rot{position:absolute;left:1in;top:-1in;width:2in;height:4in;transform:rotate(90deg)}
+.B .tag{width:2in;height:4in;border:0;gap:5pt;padding:.16in .14in}
+.B .needle{height:8pt}
+.B .wm{font-size:6pt;gap:1.6pt 2pt}
+.B .wm span{padding:.8pt 2pt}
+.B h2{font-size:15pt}
+.B .lines{font-size:8.5pt}
+.B .price{font-size:20pt}
+.B .scissors{width:.6in}
+.B .who{font-size:5.6pt}
+.B .sep{display:none}
+.B .hd{display:block}
+"""
+bookmarks = doc("SHCG Bookmark Labels", (
+    '<style>' + bm_css + '</style><section class="page B"><p class="note">Avery 8363 · 2 x 4 in labels · print at 100% · '
+    'test on plain paper first · 6 for the list + 4 for restocking</p>' + "".join(cells) + '</section>'))
+open("bookmark-labels-8363.html", "w").write(bookmarks)
 print("ok")
