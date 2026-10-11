@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Stitch Library</title>
+<meta name="description" content="Every technique from the Landscape Art Quilt pattern: raw and turned edges, couching, wool roving under tulle, sequin mesh, French knots, hand stitches and finishing.">
+<link rel="icon" href="assets/logo/The_Art_is_Coming_from_Inside_the_House_logo_transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,600;1,9..144,800&family=Special+Elite&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* Each technique is a recipe card: a photo or reel on one side, the how-to on the other. */
+.intro{display:flex;flex-direction:column;gap:18px;padding-top:clamp(28px,6vw,56px);max-width:66ch}
+.intro h1{font-family:var(--f-display);font-weight:900;font-size:clamp(36px,6vw,64px);text-transform:uppercase;display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center}
+.group{display:flex;flex-direction:column;gap:28px}
+.group > h2{font-family:var(--f-type);font-weight:400;font-size:16px;letter-spacing:.1em;color:var(--sienna);border-bottom:2px dashed var(--line);padding-bottom:8px}
+.card{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(20px,4vw,44px);align-items:start;scroll-margin-top:24px}
+.card .ph{aspect-ratio:4/3;width:100%}
+.card .side{display:flex;flex-direction:column;gap:12px}
+.card .watch{font-family:var(--f-type);font-size:14px;color:var(--sienna)}
+.card .body{display:flex;flex-direction:column;gap:14px;min-width:0}
+.card h3{font-family:var(--f-display);font-weight:900;font-size:clamp(24px,3vw,32px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-family:var(--f-type);font-size:13px;padding:2px 10px;border:1.5px solid var(--line)}
+.card dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 18px}
+.card dt{font-family:var(--f-type);font-size:13px;letter-spacing:.06em;color:var(--muted);padding-top:3px}
+.card dd{margin:0}
+.card ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:4px}
+.tip{border-left:4px solid var(--meadow);padding:6px 0 6px 14px;font-size:16px}
+.inpattern{font-family:var(--f-type);font-size:14px;color:var(--muted)}
+.cta{background:var(--ink);color:var(--cream);padding:clamp(24px,4vw,44px);display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
+.cta h2{font-family:var(--f-display);font-weight:900;font-size:clamp(24px,3.4vw,36px);max-width:22ch}
+.cta p{max-width:56ch;opacity:.9}
+.cta .btn{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.cta .btn.alt{background:transparent;color:var(--cream)}
+@media (max-width:760px){.card{grid-template-columns:1fr}.card dl{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <nav aria-label="Main">
+    <a class="mark" href="index.html">INSIDE <i>the</i> HOUSE</a>
+    <ul>
+      <li><a href="index.html#art">Art</a></li>
+      <li><a href="index.html#process">Process</a></li>
+      <li><a href="techniques.html">Stitch Library</a></li>
+      <li><a href="index.html#shop">Shop</a></li>
+      <li><a href="index.html#journal">Journal</a></li>
+      <li><a class="join" href="index.html#join">Get the calls</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="intro" aria-labelledby="lib-h">
+    <p class="typed">Stitch Library</p>
+    <h1 id="lib-h"><span class="t s">Stitch</span> <span class="t b">Library</span></h1>
+    <p>Every technique from the Landscape Art Quilt pattern, one card each. Use them on the pattern, on a bookmark, or on anything else you're making. Raw edges welcome.</p>
+    <ul class="lib">
+      <li><a href="#raw-edge"><b>Raw edge</b><span>Layering</span></a></li>
+      <li><a href="#turned-edge"><b>Turned edge</b><span>Layering</span></a></li>
+      <li><a href="#quilting"><b>Decorative quilting</b><span>Machine</span></a></li>
+      <li><a href="#couching"><b>Couching</b><span>Machine</span></a></li>
+      <li><a href="#roving"><b>Wool roving under tulle</b><span>Embellish</span></a></li>
+      <li><a href="#sequin-mesh"><b>Sequin mesh</b><span>Embellish</span></a></li>
+      <li><a href="#french-knots"><b>French knots</b><span>By hand</span></a></li>
+      <li><a href="#hand-stitches"><b>Hand stitches</b><span>By hand</span></a></li>
+      <li><a href="#finishing"><b>Finishing</b><span>Finish</span></a></li>
+    </ul>
+  </section>
+
+  <!-- Each card: replace the swatch with a photo, and point "Watch" at the matching reel. -->
+  <section class="group" aria-labelledby="g-layer">
+    <h2 id="g-layer">LAYERING</h2>
+
+    <article class="card" id="raw-edge">
+      <div class="side"><div class="ph ridges" role="img" aria-label="Photo to come: raw edge layers"><span>[PHOTO: Raw edge]</span></div>
+        <a class="watch" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">Watch the reel</a></div>
+      <div class="body">
+        <h3>Raw edge</h3>
+        <div class="chips"><span>Beginner</span><span>Quick</span><span>Frays on purpose</span></div>
+        <p>Each layer keeps a scant ⅛″ raw edge, stitched down flat with no turning under. It's the fastest way in, and it's kind to new sewists, anyone with fine-motor challenges, and anyone who'd rather spend less time at the iron.</p>
+        <dl>
+          <dt>LOOK</dt><dd>With each wash the edges soften and fray, so the piece gets a deconstructed, lived-in look.</dd>
+          <dt>BY HAND</dt><dd>Whipstitch, running stitch or backstitch.</dd>
+        </dl>
+        <p class="tip">If your stitching misses part of the edge, sew a row of straight stitches right beside it to catch it.</p>
+        <p class="inpattern">In the full pattern: steps 6, 10–14</p>
+      </div>
+    </article>
+
+    <article class="card" id="turned-edge">
+      <div class="side"><div class="ph denim" role="img" aria-label="Photo to come: turned edge layers"><span>[PHOTO: Turned edge]</span></div>
+        <a class="watch" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">Watch the reel</a></div>
+      <div class="body">
+        <h3>Turned edge</h3>
+        <div class="chips"><span>Intermediate</span><span>Takes patience</span><span>Won't fray</span></div>
+        <p>A crisp, folded edge. Each layer gets a ¼″ seam allowance (up to ⅜″) that's turned and pressed to the wrong side before stitching. It's classic appliqué with a simpler method, and it works for any image at any size.</p>
+        <dl>
+          <dt>YOU NEED</dt><dd>Interfacing on each layer, a seam gauge, and a hot iron.</dd>
+          <dt>BY HAND</dt><dd>Whipstitch, running backstitch, slipstitch or blind hem stitch.</dd>
+        </dl>
+        <p class="tip">Once the allowances are pressed, the layer numbers flip to the bottom-right corner and read backwards. That's how you know it's right.</p>
+        <p class="inpattern">In the full pattern: steps 6, 9–14</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="group" aria-labelledby="g-machine">
+    <h2 id="g-machine">MACHINE STITCHING</h2>
+
+    <article class="card" id="quilting">
+      <div class="side"><div class="ph stripe-q runner" role="img" aria-label="Photo to come: decorative quilting lines"><span>[PHOTO: Quilting lines]</span></div>
+        <a class="watch" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">Watch the reel</a></div>
+      <div class="body">
+        <h3>Decorative quilting</h3>
+        <div class="chips"><span>All levels</span><span>Machine</span></div>
+        <p>The stitching is where a flat stack of fabric turns into a mountain range. Quilt each layer in a coordinating thread, and save the skyline for last.</p>
+        <ol>
+          <li>Stitch close to the top edge of a layer.</li>
+          <li>Stitch close to its bottom edge.</li>
+          <li>Split the difference with a line in between.</li>
+          <li>Try undulating lines: they make one fabric look like several ridges.</li>
+        </ol>
+        <p class="tip">A straight stitch gives a minimal look. A zigzag breaks up the monotony. Alternate them, then break the pattern once in the middle layers.</p>
+        <p class="inpattern">In the full pattern: step 15</p>
+      </div>
+    </article>
+
+    <article class="card" id="couching">
+      <div class="side"><div class="ph shibori" role="img" aria-label="Photo to come: couched thread clouds"><span>[PHOTO: Couching]</span></div>
+        <a class="watch" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">Watch the reel</a></div>
+      <div class="body">
+        <h3>Couching</h3>
+        <div class="chips"><span>Beginner</span><span>Machine</span><span>Big texture</span></div>
+        <p>Couching means laying a thick fiber on top of the fabric and zigzagging over it to hold it down. Heavy variegated thread, embroidery floss or yarn all work. I use it for clouds, sunsets and wind across the sky.</p>
+        <ol>
+          <li>Lay the floss or yarn where you want the line. A dab of glue holds it.</li>
+          <li>Set a zigzag just wider than the fiber.</li>
+          <li>Stitch slowly so the needle swings over the fiber, not into it, and steer it along curves as you go.</li>
+        </ol>
+        <p class="tip">Matching thread makes the fiber look like it's floating. Contrasting thread makes the zigzag part of the design.</p>
+        <p class="inpattern">In the full pattern: step 16 and "Ways to embellish"</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="group" aria-labelledby="g-emb">
+    <h2 id="g-emb">EMBELLISHING</h2>
+
+    <article class="card" id="roving">
+      <div class="side"><div class="ph tarot" role="img" aria-label="Photo to come: wool roving clouds under tulle"><span>[PHOTO: Roving under tulle]</span></div>
+        <a class="watch" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">Watch the reel</a></div>
+      <div class="body">
+        <h3>Wool roving under tulle</h3>
+        <div class="chips"><span>Beginner</span><span>Soft texture</span></div>
+        <p>Soft, puffy skies. Wisps of wool roving go down on the sky, a layer of tulle or another sheer fabric goes over the top, and stitching holds it all in place.</p>
+        <ol>
+          <li>Pull roving into thin wisps. Thinner looks more like cloud.</li>
+          <li>Arrange it on the sky, then lay tulle over the whole area.</li>
+          <li>Pin, then stitch around and through the clouds to trap the wool.</li>
+        </ol>
+        <p class="tip">Felted wool works too, and so does any other loose fiber you can trap under a sheer.</p>
+        <p class="inpattern">In the full pattern: step 16 and "Ways to embellish"</p>
+      </div>
+    </article>
+
+    <article class="card" id="sequin-mesh">
+      <div class="side"><div class="ph placemat" role="img" aria-label="Photo to come: sequin mesh clouds"><span>[PHOTO: Sequin mesh]</span></div>
+        <a class="watch" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">Watch the reel</a></div>
+      <div class="body">
+        <h3>Sequin mesh</h3>
+        <div class="chips"><span>Intermediate</span><span>A little sparkle</span></div>
+        <p>A little shimmer in the sky. I pair sequin mesh clouds with couched variegated thread.</p>
+        <ol>
+          <li>Cut the mesh into cloud shapes.</li>
+          <li>Hold them in place with a dot of glue or a pin.</li>
+          <li>Stitch with a longer stitch or a zigzag, going slowly over the sequins.</li>
+        </ol>
+        <p class="tip">Sequins are plastic and melt under a hot iron. Press from the back with a cloth, or skip pressing once they're on.</p>
+        <p class="inpattern">In the full pattern: "Ways to embellish"</p>
+      </div>
+    </article>
+
+    <article class="card" id="french-knots">
+      <div class="side"><div class="ph greenman" role="img" aria-label="Photo to come: French knots on the closest ridge"><span>[PHOTO: French knots]</span></div>
+        <a class="watch" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">Watch the reel</a></div>
+      <div class="body">
+        <h3>French knots</h3>
+        <div class="chips"><span>Beginner</span><span>By hand</span></div>
+        <p>Hand-embroidered knots on the closest layers read as trees, wildflowers or fall color. The eye finds more detail up close, so this is where to spend it.</p>
+        <ol>
+          <li>Bring the needle up where you want the knot.</li>
+          <li>Wrap the floss around the needle once or twice.</li>
+          <li>Hold the wraps snug and go back down right next to where you came up, not in the same hole.</li>
+          <li>Keep gentle tension on the floss as you pull through.</li>
+        </ol>
+        <p class="tip">More wraps or more strands of floss make a bigger knot. Cluster them unevenly so they look natural.</p>
+        <p class="inpattern">In the full pattern: "Ways to embellish"</p>
+      </div>
+    </article>
+
+    <article class="card" id="hand-stitches">
+      <div class="side"><div class="ph check-q denim" role="img" aria-label="Photo to come: hand stitches"><span>[PHOTO: Hand stitches]</span></div>
+        <a class="watch" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">Watch the reel</a></div>
+      <div class="body">
+        <h3>Hand stitches</h3>
+        <div class="chips"><span>No machine needed</span><span>By hand</span></div>
+        <p>The whole landscape can be made without a machine. Pick the stitch to suit your edge.</p>
+        <dl>
+          <dt>RAW EDGE</dt><dd><b>Whipstitch</b> over the edge, a <b>running stitch</b> just inside it, or a <b>backstitch</b> for a solid line.</dd>
+          <dt>TURNED EDGE</dt><dd><b>Running backstitch</b>, or a <b>slipstitch</b> or <b>blind hem stitch</b> to hide the stitches in the fold.</dd>
+          <dt>THE HANGER</dt><dd>Double thread, three times through each hole of a saw-tooth hanger.</dd>
+        </dl>
+        <p class="tip">Big, visible stitches in a contrasting thread can be the whole point. Nobody said they had to hide.</p>
+        <p class="inpattern">In the full pattern: steps 11 and 19</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="group" aria-labelledby="g-fin">
+    <h2 id="g-fin">FINISHING</h2>
+    <article class="card" id="finishing">
+      <div class="side"><div class="ph shadowbox" role="img" aria-label="Photo to come: finished piece in a shadow box"><span>[PHOTO: Shadow box]</span></div>
+        <a class="watch" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">Watch the reel</a></div>
+      <div class="body">
+        <h3>Finishing</h3>
+        <div class="chips"><span>All levels</span></div>
+        <p>First, "true" the piece: trim it with a ruler to a square or rectangle with 90-degree corners. Then choose how it lives.</p>
+        <dl>
+          <dt>ZIGZAG EDGE</dt><dd>About six passes of zigzag around the edges. Quick and graphic.</dd>
+          <dt>BINDING</dt><dd>A 2½″ × 45–50″ strip for a traditional binding.</dd>
+          <dt>HANG IT</dt><dd>A saw-tooth hanger about 1″ down from the top and centered, or a rod pocket and dowel.</dd>
+          <dt>FRAME IT</dt><dd>A shadow box, with matching fabric on the back of the frame.</dd>
+          <dt>USE IT</dt><dd>As a patch, or as a pocket on a pillow or tote bag.</dd>
+        </dl>
+        <p class="inpattern">In the full pattern: steps 17–19</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-h">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <h2 id="cta-h">All of it, in one 10″ × 10″ landscape</h2>
+      <p>The Landscape Art Quilt pattern walks through every step, with both edge methods and all the ways to embellish. New to this? Start with the free Ridgeline Bookmarks pattern.</p>
+    </div>
+    <div class="btns">
+      <a class="btn" href="https://www.etsy.com/shop/ArtHouseArtQuilts" target="_blank" rel="noopener">Get the pattern on Etsy</a>
+      <a class="btn alt" href="index.html#join">Free bookmark pattern</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 The Art is Coming from Inside the House · Kristi Coriden · Western North Carolina</span>
+  <ul>
+    <li><a href="https://www.instagram.com/artiscomingfrominsidethehouse/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://www.etsy.com/shop/ArtHouseArtQuilts" target="_blank" rel="noopener">Etsy</a></li>
+    <li><a href="https://www.youtube.com/results?search_query=Kristi+Sews+Cool+Stuff" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
+</footer>
+</div>
+</body>
+</html>
