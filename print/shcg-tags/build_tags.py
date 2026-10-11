@@ -120,6 +120,7 @@ h2{margin:0;font-weight:900;line-height:1.05}
 .S .sep{display:none}
 .S .hd{display:block}
 /* cardstock throw tag: 3.5 x 5, hole at top */
+.T{place-items:start center;padding-top:.4in}
 .T .tag{width:3.5in;height:5in;gap:7pt;padding:.46in .22in .2in}
 .T .hole{position:absolute;top:.14in;left:50%;width:.22in;height:.22in;margin-left:-.11in;border:.75pt solid #000;border-radius:50%}
 .T .needle{height:11pt}
@@ -170,7 +171,7 @@ care = ('<p class="care">Colorway: ______________________<br><br>'
 throw_tag = tag(THROW, '<span class="hole"></span>').replace('<div class="price">', care + '<div class="price">')
 throws = doc("SHCG Throw Tags", (
     '<section class="page T"><p class="note">Cardstock · print at 100%, black and white · cut on dashed lines, punch the circle, '
-    'thread 3/8 in pink ribbon · 2 for the throws + 2 spares</p>'
-    f'<div class="grid" style="grid-template-columns:repeat(2,auto)">{throw_tag * 4}</div></section>'))
+    'thread 3/8 in pink ribbon · 2 tags, top half only: cut off and keep the bottom half</p>'
+    f'<div class="grid" style="grid-template-columns:repeat(2,auto)">{throw_tag * 2}</div></section>'))
 open("throw-tags-cardstock.html", "w").write(throws)
 print("ok")
