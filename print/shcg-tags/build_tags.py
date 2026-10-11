@@ -170,8 +170,8 @@ care = ('<p class="care">Colorway: ______________________<br><br>'
         'Natural fibers will lighten naturally in the sun over time.</p>')
 throw_tag = tag(THROW, '<span class="hole"></span>').replace('<div class="price">', care + '<div class="price">')
 throws = doc("SHCG Throw Tags", (
-    '<section class="page T"><p class="note">Cardstock · print at 100%, black and white · cut on dashed lines, punch the circle, '
-    'thread 3/8 in pink ribbon · 2 tags, top half only: cut off and keep the bottom half</p>'
+    '<section class="page T"><p class="note">Cardstock · print at 100% · cut on dashed lines, punch circle, '
+    'pink ribbon · keep the unused bottom half</p>'
     f'<div class="grid" style="grid-template-columns:repeat(2,auto)">{throw_tag * 2}</div></section>'))
 open("throw-tags-cardstock.html", "w").write(throws)
 print("ok")
