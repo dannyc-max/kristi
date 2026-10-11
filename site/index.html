@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Art is Coming from Inside the House</title>
+<meta name="description" content="Art quilts, hand-dyed cloth, and table runners and placemats, made at home in the Blue Ridge by Kristi Coriden.">
+<link rel="icon" href="assets/logo/The_Art_is_Coming_from_Inside_the_House_logo_transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,600;1,9..144,800&family=Special+Elite&display=swap">
+<style>
+/* Layout: a fabric-scrap zine. Section titles are ransom-note tiles cut from the logo;
+   everything between them stays quiet on limewash cream so the quilts do the talking. */
+:root{
+  /* Brand palette, taken straight from the logo files */
+  --cream:#F1EBDF;      /* limewash cream: page ground */
+  --scrap:#FAF6EE;      /* lighter scrap for cards */
+  --ink:#4A2436;        /* cherry charcoal: text */
+  --muted:#6E5A62;
+  --sienna:#A14B34;     /* clay brick sienna */
+  --blue:#1B3F8D;       /* luminous blue */
+  --greyblue:#8C9DAF;
+  --meadow:#6E8B67;     /* meadowland green */
+  --olive:#5A5C2E;
+  --on-tile:#F1EBDF;    /* text on a colored tile, both themes */
+  --line:#4A243633;
+  --shadow:#4A24361f;
+  --f-display:"Archivo","Arial Black",system-ui,sans-serif;
+  --f-body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --f-type:"Special Elite","Courier New",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --cream:#1E1619;--scrap:#2A2024;--ink:#F1EBDF;--muted:#C2B3B8;
+  --sienna:#D2724F;--blue:#7E9DE0;--greyblue:#A9B7C6;--meadow:#94B08C;--olive:#A7AA6A;
+  --on-tile:#1E1619;--line:#F1EBDF2e;--shadow:#00000066;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --cream:#1E1619;--scrap:#2A2024;--ink:#F1EBDF;--muted:#C2B3B8;
+  --sienna:#D2724F;--blue:#7E9DE0;--greyblue:#A9B7C6;--meadow:#94B08C;--olive:#A7AA6A;
+  --on-tile:#1E1619;--line:#F1EBDF2e;--shadow:#00000066;color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;
+  padding-inline:clamp(16px,4vw,48px);padding-block:0 56px}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px dashed var(--sienna);outline-offset:3px}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;text-wrap:balance;line-height:1.1}
+p{margin:0}
+.wrap{max-width:1120px;margin-inline:auto;display:flex;flex-direction:column;gap:clamp(72px,10vw,120px)}
+section{display:flex;flex-direction:column;gap:36px;scroll-margin-top:24px}
+.typed{font-family:var(--f-type);font-size:14px;letter-spacing:.06em;color:var(--muted)}
+
+/* ---------- nav ---------- */
+nav{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;align-items:center;
+  padding-block:18px;border-bottom:2px dashed var(--line)}
+.mark{font-family:var(--f-display);font-weight:900;font-size:15px;letter-spacing:.04em;text-decoration:none;display:flex;gap:6px;align-items:center}
+.mark i{font-family:var(--f-serif);font-weight:800;font-size:17px;color:var(--sienna)}
+nav ul{display:flex;flex-wrap:wrap;gap:0 22px;list-style:none;margin:0;padding:0;font-family:var(--f-type);font-size:15px}
+nav ul a{text-decoration:none;display:inline-block;padding-block:10px}
+nav ul a:hover{color:var(--sienna);text-decoration:underline wavy}
+nav .join{color:var(--sienna)}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center;padding-top:clamp(28px,6vw,64px)}
+.logo-scrap img{width:100%;height:auto}
+.logo-scrap{background:#F1EBDF;margin:0;padding:clamp(16px,3vw,32px);box-shadow:5px 7px 0 var(--shadow);transform:rotate(-1deg);
+  outline:2px dashed #4A243655;outline-offset:-10px}
+.call{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-type);font-size:15px;color:var(--sienna)}
+.call svg{width:22px;height:22px;flex:none;transform-origin:50% 60%}
+@media (prefers-reduced-motion:no-preference){.call svg{animation:ring 2.4s ease-in-out 1s 3}}
+@keyframes ring{0%,40%,100%{transform:rotate(0)}5%,15%,25%{transform:rotate(-14deg)}10%,20%,30%{transform:rotate(14deg)}}
+.hero-copy{display:flex;flex-direction:column;gap:22px}
+.hero-copy .lede{font-size:clamp(19px,2.1vw,22px);line-height:1.45;max-width:32ch}
+.hero-copy .aside{color:var(--muted);max-width:40ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;font-family:var(--f-display);font-weight:700;font-size:15px;
+  text-decoration:none;border:2px solid var(--ink);background:var(--ink);color:var(--cream);cursor:pointer;transition:transform .15s}
+.btn.alt{background:transparent;color:var(--ink);border-style:dashed}
+.btn:hover{transform:rotate(-1.5deg) translateY(-2px)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+
+/* ---------- ransom-tile section titles ---------- */
+.head{display:flex;flex-direction:column;gap:14px;max-width:64ch}
+.head h2{font-family:var(--f-display);font-weight:900;font-size:clamp(30px,4.6vw,50px);text-transform:uppercase;letter-spacing:-.005em;
+  display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center}
+.t{display:inline-block;padding:.12em .32em .1em;box-shadow:3px 4px 0 var(--shadow);outline:2px dashed currentColor;outline-offset:-7px}
+.t.s{background:var(--sienna);color:var(--on-tile);transform:rotate(-2deg)}
+.t.b{background:var(--blue);color:var(--on-tile);transform:rotate(1.5deg)}
+.t.g{background:var(--meadow);color:var(--on-tile);transform:rotate(-1deg)}
+.t.o{background:var(--olive);color:var(--on-tile);transform:rotate(2deg)}
+.t.gb{background:var(--greyblue);color:var(--on-tile);transform:rotate(-1.5deg)}
+.t.x{outline:2px solid var(--ink);outline-offset:0;box-shadow:none;transform:rotate(1deg)}
+.sm{font-family:var(--f-serif);font-style:italic;font-weight:800;text-transform:none;font-size:.72em;color:var(--blue)}
+.head p{color:var(--muted)}
+
+/* fabric swatches stand in for photos until real ones go in assets/photos */
+.ph{position:relative;border:10px solid var(--scrap);box-shadow:4px 6px 0 var(--shadow);max-width:100%}
+.ph span{position:absolute;left:10px;bottom:10px;font-family:var(--f-type);font-size:12px;background:var(--scrap);color:var(--ink);padding:2px 8px}
+.ridges{background:
+  linear-gradient(172deg,transparent 62%,#4A6B45 62.4%),
+  linear-gradient(190deg,transparent 52%,#6E8B67 52.4%),
+  linear-gradient(166deg,transparent 42%,#3F5F86 42.4%),
+  linear-gradient(196deg,transparent 33%,#8C9DAF 33.4%),#D8E0E8}
+.tarot{background:radial-gradient(circle at 50% 38%,#E9C46A 0 14%,transparent 15%),
+  repeating-linear-gradient(0deg,#ffffff14 0 2px,transparent 2px 6px),linear-gradient(#1B3F8D,#4A2436)}
+.greenman{background:radial-gradient(ellipse at 50% 45%,#94B08C 0 22%,transparent 23%),
+  repeating-radial-gradient(circle at 50% 45%,#5A5C2E 0 8px,#6E8B67 8px 16px)}
+.denim{background:repeating-linear-gradient(45deg,#3E5672 0 3px,#4D6888 3px 6px)}
+.shadowbox{background:linear-gradient(#0000 0 0) padding-box,
+  linear-gradient(175deg,transparent 58%,#A14B34 58.4%),linear-gradient(188deg,transparent 46%,#C98A5B 46.4%),#E9DCC4;
+  border-color:#3a2a22!important}
+.runner{background:repeating-linear-gradient(90deg,#A14B34 0 18px,#F1EBDF 18px 24px,#1B3F8D 24px 42px,#F1EBDF 42px 48px,#6E8B67 48px 60px,#F1EBDF 60px 66px)}
+.placemat{background:repeating-conic-gradient(#8C9DAF 0 25%,#F1EBDF 0 50%) 0 0/30px 30px}
+.shibori{background:repeating-radial-gradient(circle at 30% 40%,#1B3F8D 0 6px,#5C7BB8 6px 9px,#DCE3F0 9px 13px)}
+
+/* ---------- art ---------- */
+.art{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px}
+.piece{display:flex;flex-direction:column;gap:12px;min-width:0}
+.piece .ph{width:100%}
+.piece h3{font-family:var(--f-display);font-weight:900;font-size:22px}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;font-family:var(--f-type);font-size:14px;color:var(--muted)}
+.price{font-variant-numeric:tabular-nums;color:var(--sienna);font-weight:700}
+.p1{grid-column:span 5}.p1 .ph{aspect-ratio:4/5}
+.p2{grid-column:span 7}.p2 .ph{aspect-ratio:4/3}
+.p3{grid-column:span 4}.p3 .ph{aspect-ratio:3/4}
+.p4{grid-column:span 4}.p4 .ph{aspect-ratio:33/35}
+.p5{grid-column:span 4}.p5 .ph{aspect-ratio:1}
+@media (max-width:820px){.p1,.p2{grid-column:span 12}.p3,.p4,.p5{grid-column:span 6}.p5{grid-column:span 12}}
+@media (max-width:520px){.p3,.p4{grid-column:span 12}}
+
+/* ---------- process ---------- */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:28px;counter-reset:s}
+.steps li{display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:3px solid var(--olive);counter-increment:s;min-width:0}
+.steps li:nth-child(2){border-color:var(--blue)}
+.steps li:nth-child(3){border-color:var(--sienna)}
+.steps li:nth-child(4){border-color:var(--meadow)}
+.steps li::before{content:"Step " counter(s);font-family:var(--f-type);font-size:14px;color:var(--muted)}
+.steps h3{font-family:var(--f-display);font-weight:900;font-size:21px}
+.steps p{font-size:16px}
+.methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.method{background:var(--scrap);border:1px solid var(--line);padding:22px 24px;display:flex;flex-direction:column;gap:8px}
+.method h3{font-family:var(--f-type);font-weight:400;font-size:17px;letter-spacing:.08em;color:var(--sienna)}
+
+/* found footage: video and reel links */
+.tapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:20px}
+.tape{display:flex;flex-direction:column;gap:10px;text-decoration:none;background:var(--ink);color:var(--cream);padding:18px 18px 20px;position:relative;
+  box-shadow:4px 6px 0 var(--shadow);transition:transform .15s}
+.tape:hover{transform:rotate(-1deg) translateY(-2px)}
+.tape .label{background:#F1EBDF;color:#4A2436;font-family:var(--f-type);font-size:14px;padding:8px 10px;transform:rotate(-1deg);
+  border-left:6px solid var(--sienna)}
+.tape:nth-child(2) .label{border-color:var(--blue)}
+.tape:nth-child(3) .label{border-color:var(--meadow)}
+.tape:nth-child(4) .label{border-color:var(--olive)}
+.tape p{font-size:15px;opacity:.85}
+.tape .rec{font-family:var(--f-type);font-size:12px;letter-spacing:.1em;display:flex;align-items:center;gap:6px}
+.tape .rec::before{content:"";width:9px;height:9px;border-radius:50%;background:#D2724F}
+
+/* ---------- manifesto ---------- */
+.manifesto{background:var(--blue);color:var(--on-tile);padding:clamp(28px,5vw,60px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,5vw,56px);
+  clip-path:polygon(0 2%,100% 0,99.5% 98%,0.5% 100%)}
+.manifesto h2{font-family:var(--f-serif);font-style:italic;font-weight:800;font-size:clamp(32px,4.6vw,52px);line-height:1.05}
+.manifesto .body{display:flex;flex-direction:column;gap:16px;max-width:60ch}
+.manifesto .typed{color:inherit;opacity:.8}
+.minutes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-family:var(--f-type);font-size:15px}
+.minutes li{display:flex;gap:10px}
+.minutes li::before{content:"\2610";flex:none}
+.minutes li.done::before{content:"\2611"}
+@media (max-width:760px){.manifesto{grid-template-columns:1fr}}
+
+/* ---------- shop ---------- */
+.shop-feature{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:28px}
+.feat{display:flex;flex-direction:column;gap:12px;min-width:0}
+.feat .ph{aspect-ratio:16/9;width:100%}
+.feat h3{font-family:var(--f-display);font-weight:900;font-size:24px}
+.booth{background:var(--scrap);border:2px dashed var(--line);padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:16px}
+.booth h3{font-family:var(--f-type);font-weight:400;font-size:18px;letter-spacing:.06em}
+.tagrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:0 32px}
+.tagrow div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dotted var(--line);font-size:16px}
+.tagrow b{font-weight:500}
+.tagrow span{font-variant-numeric:tabular-nums;color:var(--sienna);font-weight:700;white-space:nowrap}
+
+/* ---------- journal ---------- */
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.post{display:flex;flex-direction:column;gap:10px;padding:22px 24px 24px;background:var(--scrap);border:1px solid var(--line);min-width:0}
+.post h3{font-family:var(--f-display);font-weight:900;font-size:21px}
+.post p{font-size:16px;color:var(--muted)}
+.post a{font-family:var(--f-type);font-size:15px;color:var(--sienna);margin-top:auto}
+.post.vault{background:var(--ink);color:var(--cream);border:0;transform:rotate(-.6deg)}
+.post.vault p{color:inherit;opacity:.85}
+.post.vault .typed{color:inherit;opacity:.75}
+.post.vault a{color:#E9A07F}
+
+/* ---------- find me ---------- */
+.fairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px}
+.fair{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;padding:20px;border:2px dashed var(--line);background:var(--scrap)}
+.date{font-family:var(--f-display);font-weight:900;text-align:center;line-height:1;background:var(--ink);color:var(--cream);padding:10px 12px;min-width:72px}
+.date b{display:block;font-size:28px;font-variant-numeric:tabular-nums}
+.date small{font-family:var(--f-type);font-weight:400;font-size:12px;letter-spacing:.1em}
+.fair h3{font-family:var(--f-display);font-weight:900;font-size:18px;line-height:1.25}
+.fair p{font-size:15px;color:var(--muted)}
+
+/* ---------- join ---------- */
+.join-box{background:var(--sienna);color:var(--on-tile);padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,56px);
+  clip-path:polygon(0 0,99.5% 2%,100% 100%,0.5% 97%)}
+.join-box h2{font-family:var(--f-display);font-weight:900;font-size:clamp(30px,4.4vw,48px);text-transform:uppercase}
+.join-box .typed{color:inherit;opacity:.85}
+.join-box ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.join-copy{display:flex;flex-direction:column;gap:16px;max-width:52ch}
+form{display:flex;flex-direction:column;gap:12px;align-self:center;min-width:0}
+label{font-family:var(--f-type);font-size:14px;letter-spacing:.06em}
+input{font:inherit;font-size:17px;min-height:50px;padding:0 14px;border:2px solid var(--on-tile);background:var(--cream);color:var(--ink);width:100%}
+form .btn{background:var(--ink);border-color:var(--ink);color:var(--cream);justify-content:center}
+.fine{font-size:14px;opacity:.85}
+.status{font-family:var(--f-type);font-size:15px;min-height:1.4em}
+@media (max-width:760px){.join-box{grid-template-columns:1fr}.hero{grid-template-columns:1fr}}
+
+footer{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;border-top:2px dashed var(--line);padding-top:22px;font-family:var(--f-type);font-size:14px;color:var(--muted)}
+footer ul{display:flex;flex-wrap:wrap;gap:6px 20px;list-style:none;margin:0;padding:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <nav aria-label="Main">
+    <a class="mark" href="#top">INSIDE <i>the</i> HOUSE</a>
+    <ul>
+      <li><a href="#art">Art</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#journal">Journal</a></li>
+      <li><a href="#find">Find me</a></li>
+      <li><a class="join" href="#join">Get the calls</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap" id="top">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title" class="logo-scrap">
+      <img src="assets/logo/The_Art_is_Coming_from_Inside_the_House_logo.svg" width="456" height="124" alt="The Art is Coming from Inside the House">
+    </h1>
+    <div class="hero-copy">
+      <p class="call">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Incoming call: we traced it to the sewing room.
+      </p>
+      <p class="lede">Art quilts, hand-dyed cloth, and table linens, made at home in the Blue Ridge by Kristi Coriden.</p>
+      <p class="aside">This is a mild-mannered sewing circle. Please ignore the agenda on the cutting table.</p>
+      <div class="btns">
+        <a class="btn" href="#art">See the art</a>
+        <a class="btn alt" href="#join">Get the calls</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ART -->
+  <section id="art" aria-labelledby="art-h">
+    <div class="head">
+      <p class="typed">Wall art · one of a kind</p>
+      <h2 id="art-h"><span class="t s">Quilts</span> <span class="sm">made to</span> <span class="t b">hang</span></h2>
+      <p>Hand-dyed cloth, upcycled denim, and stitching you can see from across the room. These are made for walls, not the linen closet.</p>
+    </div>
+    <div class="art">
+      <article class="piece p1">
+        <div class="ph tarot" role="img" aria-label="Photo to come: Ace of Cups"><span>[PHOTO: Ace of Cups]</span></div>
+        <h3>Ace of Cups</h3>
+        <div class="meta"><span>18 × 24 in</span><span>Tarot series</span></div>
+        <p class="price">[PRICE]</p>
+      </article>
+      <article class="piece p2">
+        <div class="ph ridges" role="img" aria-label="Photo to come: Blue Ridge landscape quilt"><span>[PHOTO: Blue Ridge landscape]</span></div>
+        <h3>The Blue Ridge</h3>
+        <div class="meta"><span>Layered appliqué</span><span>Hand-dyed ridges</span><span>Couched-thread sky</span></div>
+        <p>Some of the oldest mountains on the planet. The farthest ridges melt into the sky, so I keep adding layers until I can't tell how many there are either.</p>
+      </article>
+      <article class="piece p3">
+        <div class="ph greenman" role="img" aria-label="Photo to come: Green Man"><span>[PHOTO: Green Man]</span></div>
+        <h3>Green Man</h3>
+        <div class="meta"><span>18 × 30 in</span></div>
+        <p class="price">[PRICE]</p>
+      </article>
+      <article class="piece p4">
+        <div class="ph denim" role="img" aria-label="Photo to come: Graybeard"><span>[PHOTO: Graybeard]</span></div>
+        <h3>Graybeard</h3>
+        <div class="meta"><span>33 × 35 in</span><span>Upcycled denim, hand-dyed double gauze</span></div>
+        <p class="price">$770</p>
+      </article>
+      <article class="piece p5">
+        <div class="ph shadowbox" role="img" aria-label="Photo to come: small shadow-box quilts"><span>[PHOTO: Shadow boxes]</span></div>
+        <h3>Shadow boxes</h3>
+        <div class="meta"><span>7 × 7 to 12 × 15 in</span><span>Framed, ready to hang</span></div>
+        <p class="price">From $65</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" aria-labelledby="process-h">
+    <div class="head">
+      <p class="typed">How it's made</p>
+      <h2 id="process-h"><span class="t o">Dye</span> <span class="t gb">Layer</span> <span class="t s">Stitch</span></h2>
+      <p>Every landscape goes through the same four stages. You can watch most of them on Instagram, usually with a dog walking through the frame.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Dye the cloth</h3><p>White cotton and linen go into small batches of fiber-reactive dye, so the color lives in the fiber instead of sitting on top. Three trips through the washer per batch.</p></li>
+      <li><h3>Cut the ridges</h3><p>Each mountain layer is traced onto fusible interfacing, fused to its fabric, and auditioned on the table. I snap a photo before anything gets glued.</p></li>
+      <li><h3>Stitch it down</h3><p>Layers go on one at a time, back to front. Straight stitch, then zigzag, then I break the pattern once in the middle so it doesn't look machine-made.</p></li>
+      <li><h3>Embellish &amp; finish</h3><p>Couched variegated thread for clouds, wool roving under tulle, sequin mesh, French knots on the closest ridges. Then I true the edges and frame it.</p></li>
+    </ol>
+    <div class="methods">
+      <div class="method"><h3>RAW EDGE</h3><p>A scant ⅛″ edge stitched down flat. Quicker, and it softens and frays with every wash, so the work looks lived-in.</p></div>
+      <div class="method"><h3>TURNED EDGE</h3><p>A ¼″ allowance pressed under before stitching. Crisp, classic appliqué that won't fray. Takes patience and a hot iron.</p></div>
+    </div>
+
+    <div class="head">
+      <p class="typed">Found footage</p>
+      <h3 style="font-family:var(--f-display);font-weight:900;font-size:clamp(22px,3vw,30px)">Tapes from the basement</h3>
+      <p>Process reels from Instagram, plus the old sew-along tapes from my first channel, <i>Kristi Sews Cool Stuff</i>.</p>
+    </div>
+    <div class="tapes">
+      <!-- Replace each href with the real reel or video link. -->
+      <a class="tape" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">
+        <span class="rec">REEL</span><span class="label">Dye day: double gauze in the washer</span><p>Watch white cloth turn Blue Ridge blue.</p></a>
+      <a class="tape" href="https://www.instagram.com/artiscomingfrominsidethehouse/reels/" target="_blank" rel="noopener">
+        <span class="rec">REEL</span><span class="label">Ridge by ridge: a landscape in 60 seconds</span><p>Seven layers, glued, stitched, trimmed.</p></a>
+      <a class="tape" href="https://www.youtube.com/results?search_query=Kristi+Sews+Cool+Stuff" target="_blank" rel="noopener">
+        <span class="rec">VHS · 2021</span><span class="label">Sew-along, part 1: cutting the pattern</span><p>Simplicity 1618, the cold-shoulder top. The pattern unfolds like a marshmallow in a microwave.</p></a>
+      <a class="tape" href="https://www.youtube.com/results?search_query=Kristi+Sews+Cool+Stuff" target="_blank" rel="noopener">
+        <span class="rec">VHS · 2021</span><span class="label">Sew-along, part 2: French seams</span><p>No serger, no problem. Ninety minutes, half of it pinning and pressing.</p></a>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" aria-labelledby="why-h">
+    <h2 id="why-h">The sewing circle was always a meeting.</h2>
+    <div class="body">
+      <p class="typed">Minutes of the last meeting</p>
+      <p>Quilting has always been where people talk freely while their hands are busy. The protest and political quilts at QuiltCon made that loud and clear: stitched slogans, soft materials, hard opinions.</p>
+      <p>That's the joke in the name. The calls are coming from inside the house, and so is the art. Everything here is made at a kitchen-table studio that looks harmless from the street.</p>
+      <ul class="minutes">
+        <li class="done">Dye fabric</li>
+        <li class="done">Bring snacks</li>
+        <li>Make something that says what we mean</li>
+        <li>Nobody tells the landlord</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop" aria-labelledby="shop-h">
+    <div class="head">
+      <p class="typed">Etsy shop · ArtHouseArtQuilts</p>
+      <h2 id="shop-h"><span class="t g">Table</span> <span class="sm">for</span> <span class="t x">dinner</span></h2>
+      <p>Runners and placemats in the same hand-dyed colors as the wall pieces. Everyday art for the dinner table. They're what people keep picking up at the booth, so they're what's in the shop.</p>
+    </div>
+    <div class="shop-feature">
+      <article class="feat">
+        <div class="ph runner" role="img" aria-label="Photo to come: table runner"><span>[PHOTO: Table runner]</span></div>
+        <h3>Table runners</h3>
+        <div class="meta"><span>Hand-dyed</span><span>Self-bound</span><span>Machine washable</span></div>
+        <p class="price">[PRICE]</p>
+      </article>
+      <article class="feat">
+        <div class="ph placemat" role="img" aria-label="Photo to come: placemats"><span>[PHOTO: Placemats]</span></div>
+        <h3>Placemats</h3>
+        <div class="meta"><span>Sets of 2 or 4</span><span>Quilted</span><span>Machine washable</span></div>
+        <p class="price">[PRICE]</p>
+      </article>
+    </div>
+    <div class="btns"><a class="btn" href="https://www.etsy.com/shop/ArtHouseArtQuilts" target="_blank" rel="noopener">Shop runners &amp; placemats on Etsy</a></div>
+
+    <div class="booth">
+      <h3>ALSO AT THE BOOTH</h3>
+      <div class="tagrow">
+        <div><b>Landscape art quilt kits</b><span>[PRICE]</span></div>
+        <div><b>Trick-or-treat bags</b><span>$20</span></div>
+        <div><b>Sleep masks</b><span>$20</span></div>
+        <div><b>Rope-woven bowls</b><span>$25</span></div>
+        <div><b>Toddler blankets</b><span>$55</span></div>
+        <div><b>Hand-dyed throws</b><span>$65</span></div>
+        <div><b>Shibori throws</b><span>$80</span></div>
+        <div><b>Reversible throws</b><span>$90</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section id="journal" aria-labelledby="journal-h">
+    <div class="head">
+      <p class="typed">Journal</p>
+      <h2 id="journal-h"><span class="t b">Notes</span> <span class="sm">from the</span> <span class="t s">house</span></h2>
+    </div>
+    <div class="posts">
+      <article class="post">
+        <p class="typed">Process</p>
+        <h3>Raw edge or turned edge?</h3>
+        <p>Two ways to make the same landscape, and which one fits how you sew.</p>
+        <a href="#process">Read it</a>
+      </article>
+      <article class="post">
+        <p class="typed">Materials</p>
+        <h3>Why I dye my own double gauze</h3>
+        <p>Store-bought blues never look like the ridges out my window.</p>
+        <a href="#process">Read it</a>
+      </article>
+      <article class="post vault">
+        <p class="typed">From the vault · 2012</p>
+        <h3>I learned to ride a unicycle. It explains a lot.</h3>
+        <p>Before quilts, there was a blog about falling off a unicycle in public until I didn't. Turns out free-motion quilting takes the same skill: keep pedaling and don't look down.</p>
+        <a href="#journal">Read the old post</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- FIND ME -->
+  <section id="find" aria-labelledby="find-h">
+    <div class="head">
+      <p class="typed">In person</p>
+      <h2 id="find-h"><span class="t o">Come</span> <span class="t gb">touch</span> <span class="sm">the quilts</span></h2>
+      <p>Quilts look better in person. Here's where they'll be.</p>
+    </div>
+    <div class="fairs">
+      <div class="fair"><div class="date"><small>OCT</small><b>17</b><small>SAT</small></div>
+        <div><h3>Apple Harvest Festival</h3><p>Downtown Waynesville, NC. I'm at my own booth all day. Sign up for the list and get a free pattern.</p></div></div>
+      <div class="fair"><div class="date"><small>OCT</small><b>15–18</b><small>THU–SUN</small></div>
+        <div><h3>Craft Fair of the Southern Highlands</h3><p>Harrah's Cherokee Center, Asheville. Wall pieces and kits at the Local Cloth booth, 10am–5pm.</p></div></div>
+      <div class="fair"><div class="date"><small>ANY</small><b>24/7</b><small>DAY</small></div>
+        <div><h3>Etsy shop</h3><p>Runners and placemats, plus whatever survives the fairs. <a href="https://www.etsy.com/shop/ArtHouseArtQuilts" target="_blank" rel="noopener">ArtHouseArtQuilts</a></p></div></div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section id="join" class="join-box" aria-labelledby="join-h">
+    <div class="join-copy">
+      <p class="typed">The newsletter</p>
+      <h2 id="join-h">Calls from Inside the House</h2>
+      <p>Two emails a month, never more than that. New work, where to find me, and what's on the cutting table.</p>
+      <ul>
+        <li>A free mini landscape pattern the minute you sign up</li>
+        <li>A monthly drawing for a hand-dyed placemat</li>
+        <li>First look at new runners before they go on Etsy</li>
+      </ul>
+    </div>
+    <form id="signup" novalidate>
+      <label for="email">YOUR EMAIL</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <label for="fname">FIRST NAME (optional)</label>
+      <input id="fname" name="fname" type="text" autocomplete="given-name">
+      <button class="btn" type="submit">Pick up the phone</button>
+      <p class="status" id="status" role="status"></p>
+      <p class="fine">No spam, no selling your address. Unsubscribe in one click.</p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 The Art is Coming from Inside the House · Kristi Coriden · Western North Carolina</span>
+  <ul>
+    <li><a href="https://www.instagram.com/artiscomingfrominsidethehouse/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://www.etsy.com/shop/ArtHouseArtQuilts" target="_blank" rel="noopener">Etsy</a></li>
+    <li><a href="https://www.youtube.com/results?search_query=Kristi+Sews+Cool+Stuff" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
+</footer>
+
+</div>
+<script>
+// Sign-up form. Not connected to an email service yet: when you pick one
+// (MailerLite, Kit, Buttondown...), paste its form action URL into SIGNUP_URL.
+const SIGNUP_URL = "";
+document.getElementById("signup").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const status = document.getElementById("status");
+  const email = document.getElementById("email");
+  if (!email.value || !email.checkValidity()) {
+    status.textContent = "That email doesn't look right. Check for a typo and try again.";
+    email.focus();
+    return;
+  }
+  if (!SIGNUP_URL) {
+    status.textContent = "Sign-ups open when the site goes live. Until then, find me at the Apple Harvest Festival on Oct 17.";
+    return;
+  }
+  try {
+    const res = await fetch(SIGNUP_URL, { method: "POST", body: new FormData(e.target) });
+    if (!res.ok) throw new Error();
+    status.textContent = "You're on the list. Check your inbox for the free pattern.";
+    e.target.reset();
+  } catch {
+    status.textContent = "That didn't go through. Try again in a minute.";
+  }
+});
+</script>
+</body>
+</html>
