@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Booth Sign-up Sheet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=Special+Elite&display=swap">
+<style>
+/* Clipboard sheet for the booth: print on letter paper, portrait. */
+:root{--ink:#4A2436;--sienna:#A14B34;--cream:#F1EBDF;--line:#4A243666}
+@page{size:letter;margin:0.5in}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:"Archivo",Arial,sans-serif;color:var(--ink);background:#fff}
+.sheet{max-width:7.5in;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+header{display:grid;grid-template-columns:2.6in 1fr;gap:20px;align-items:center}
+header img{width:100%;height:auto}
+h1{font-weight:900;font-size:26px;line-height:1.05;margin:0;text-transform:uppercase}
+.typed{font-family:"Special Elite","Courier New",monospace;font-size:13px;letter-spacing:.04em}
+.perks{display:flex;gap:10px;flex-wrap:wrap}
+.perk{border:2px dashed var(--sienna);padding:6px 10px;font-size:13px;font-weight:700}
+table{width:100%;border-collapse:collapse}
+th{font-family:"Special Elite","Courier New",monospace;font-weight:400;font-size:12px;text-align:left;padding:4px 6px;border-bottom:2px solid var(--ink)}
+td{height:0.42in;border-bottom:1px solid var(--line);padding:0 6px}
+td.n{width:.35in;font-family:"Special Elite",monospace;font-size:12px;color:var(--sienna)}
+td.c{width:.9in;text-align:center;font-size:12px}
+footer{font-size:11px;color:#6E5A62}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <img src="../assets/logo/The_Art_is_Coming_from_Inside_the_House_logo.svg" alt="The Art is Coming from Inside the House">
+    <div>
+      <p class="typed">Apple Harvest Festival · Waynesville · Oct 17</p>
+      <h1>Get the calls from inside the house</h1>
+      <p class="typed">An email every month or so. New work, where to find me, first look at runners.</p>
+    </div>
+  </header>
+  <div class="perks">
+    <span class="perk">Free Ridgeline Bookmarks pattern by email</span>
+    <span class="perk">First look at new runners &amp; placemats</span>
+  </div>
+  <table>
+    <thead><tr><th></th><th>First name</th><th>Email (please print clearly)</th><th>Town</th><th>Bookmark pattern?</th></tr></thead>
+    <tbody>
+      <tr><td class="n">01</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">02</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">03</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">04</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">05</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">06</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">07</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">08</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">09</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">10</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">11</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">12</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">13</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">14</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">15</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">16</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">17</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+      <tr><td class="n">18</td><td></td><td></td><td></td><td class="c">☐</td></tr>
+    </tbody>
+  </table>
+  <footer>By signing up you agree to get emails from The Art is Coming from Inside the House. Unsubscribe anytime. Your address is never shared or sold.</footer>
+</div>
+</body>
+</html>

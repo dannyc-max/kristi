@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Dye Notes</title>
+<meta name="description" content="Exactly how I dye my cloth: Dharma fiber reactive dye, washing machine, low water immersion and shibori, with a dye log of every batch, mistakes included.">
+<link rel="icon" href="assets/logo/The_Art_is_Coming_from_Inside_the_House_logo_transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,600;1,9..144,800&family=Special+Elite&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* A dyer's notebook: supplies, three methods, then the dye log as lab-book entries with before/after photo slots. */
+.intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,56px);align-items:center;padding-top:clamp(28px,6vw,56px)}
+.intro .text{display:flex;flex-direction:column;gap:18px;max-width:60ch}
+.intro h1{font-family:var(--f-display);font-weight:900;font-size:clamp(36px,6vw,64px);text-transform:uppercase;display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center}
+.intro .lede{font-size:clamp(18px,2vw,21px);line-height:1.5}
+.intro figure{margin:0}
+.intro img{width:100%;aspect-ratio:1;object-fit:cover;border:10px solid var(--scrap);box-shadow:5px 7px 0 var(--shadow);transform:rotate(1.5deg)}
+@media (max-width:760px){.intro{grid-template-columns:1fr}}
+
+.supplies{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:0 32px}
+.supplies div{display:flex;flex-direction:column;gap:2px;padding:12px 0;border-bottom:1px dotted var(--line)}
+.supplies b{font-family:var(--f-display);font-weight:900;font-size:17px}
+.supplies span{font-size:15px;color:var(--muted)}
+
+.batch{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px}
+.batch div{background:var(--scrap);border:1px solid var(--line);padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.batch b{font-family:var(--f-display);font-weight:900;font-size:24px;font-variant-numeric:tabular-nums;color:var(--sienna)}
+.batch span{font-size:14px;color:var(--muted)}
+
+.methods3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px}
+.m{display:flex;flex-direction:column;gap:12px;min-width:0}
+.m .ph{aspect-ratio:4/3;width:100%}
+.m h3{font-family:var(--f-display);font-weight:900;font-size:22px}
+.m dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:15px}
+.m dt{font-family:var(--f-type);font-size:13px;letter-spacing:.05em;color:var(--muted);padding-top:2px}
+.m dd{margin:0}
+
+/* dye log: one lab-book entry per batch */
+.log{display:flex;flex-direction:column;gap:24px}
+.entry{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(18px,3vw,36px);padding:clamp(18px,3vw,28px);background:var(--scrap);border:1px solid var(--line);scroll-margin-top:24px;
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,var(--line) 31px 32px)}
+.entry .shots{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+.entry .shots .ph{aspect-ratio:1;border-width:6px}
+.entry .shots .ph span{font-size:11px}
+.entry .body{display:flex;flex-direction:column;gap:12px;min-width:0}
+.entry h3{font-family:var(--f-display);font-weight:900;font-size:clamp(20px,2.4vw,26px)}
+.entry table{border-collapse:collapse;width:100%;font-size:15px}
+.entry th{font-family:var(--f-type);font-weight:400;font-size:13px;letter-spacing:.05em;color:var(--muted);text-align:left;padding:5px 12px 5px 0;vertical-align:top;white-space:nowrap}
+.entry td{padding:5px 0;font-variant-numeric:tabular-nums}
+.status{display:inline-block;font-family:var(--f-type);font-size:13px;padding:2px 10px;align-self:flex-start}
+.status.done{background:var(--meadow);color:var(--on-tile)}
+.status.fix{background:var(--sienna);color:var(--on-tile)}
+.status.wait{border:1.5px dashed var(--ink)}
+.swatch-pair{display:flex;align-items:center;gap:10px;font-family:var(--f-type);font-size:14px}
+.swatch-pair i{display:inline-block;width:34px;height:22px;border:1px solid var(--line)}
+@media (max-width:760px){.entry{grid-template-columns:1fr}}
+
+.post{max-width:66ch;display:flex;flex-direction:column;gap:16px}
+.post h2{font-family:var(--f-serif);font-style:italic;font-weight:800;font-size:clamp(28px,4vw,44px);line-height:1.1}
+.post p{font-size:18px}
+.post blockquote{margin:0;padding:10px 0 10px 18px;border-left:4px solid var(--sienna);font-family:var(--f-type);font-size:16px}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:16px}
+.gallery .ph{aspect-ratio:1}
+
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px}
+.notes > div{display:flex;flex-direction:column;gap:10px}
+.notes h3{font-family:var(--f-type);font-weight:400;font-size:17px;letter-spacing:.06em;color:var(--sienna)}
+.notes ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <nav aria-label="Main">
+    <a class="mark" href="index.html">INSIDE <i>the</i> HOUSE</a>
+    <ul>
+      <li><a href="index.html#art">Art</a></li>
+      <li><a href="dye.html">Dye Notes</a></li>
+      <li><a href="techniques.html">Stitch Library</a></li>
+      <li><a href="index.html#shop">Shop</a></li>
+      <li><a href="index.html#journal">Journal</a></li>
+      <li><a class="join" href="index.html#join">Get the calls</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="intro" aria-labelledby="dye-h">
+    <div class="text">
+      <p class="typed">Dye Notes</p>
+      <h1 id="dye-h"><span class="t b">Dye</span> <span class="t o">Notes</span></h1>
+      <p class="lede">Here's exactly how I dye my cloth: what I use, how much, and what goes wrong. No secret recipes. If you want to try it yourself, everything you need is on this page.</p>
+      <p>I dye cotton double gauze and linen in the house, mostly in my washing machine and in buckets. I write down every batch: the dye, the water, the weight of the fabric, and what actually came out. Sometimes a mistake turns into a new color.</p>
+    </div>
+    <figure><img src="assets/photos/hand-dyed-double-gauze-blankets.jpg" alt="Stack of hand-dyed double gauze in periwinkle, cornflower blue, sage green and plum, on the grass"></figure>
+  </section>
+
+  <!-- SUPPLIES -->
+  <section aria-labelledby="sup-h">
+    <div class="head">
+      <p class="typed">What I use</p>
+      <h2 id="sup-h"><span class="t s">The</span> <span class="t x">kit</span></h2>
+    </div>
+    <div class="supplies">
+      <div><b>Dharma Fiber Reactive Procion MX dye</b><span>Powdered dye for cotton, linen and other plant fibers. It bonds with the fiber, so the color doesn't wash out.</span></div>
+      <div><b>Soda ash</b><span>The fixer. It raises the pH so the dye bonds to the cloth.</span></div>
+      <div><b>Synthrapol</b><span>A detergent for the final wash. It carries loose dye away so it doesn't settle back on the fabric.</span></div>
+      <div><b>A washing machine</b><span>For solid colors on big pieces like throws and baby blankets.</span></div>
+      <div><b>Buckets</b><span>For low water immersion and shibori, where I want mottled or patterned color.</span></div>
+      <div><b>A kitchen scale and measuring spoons</b><span>Used only for dye, never for food again.</span></div>
+      <div><b>Cotton double gauze and linen</b><span>Plant fibers take fiber reactive dye best.</span></div>
+      <div><b>A notebook</b><span>The most important tool on this list. Every batch gets written down.</span></div>
+    </div>
+  </section>
+
+  <!-- ONE BATCH -->
+  <section aria-labelledby="batch-h">
+    <div class="head">
+      <p class="typed">One batch, by the numbers</p>
+      <h2 id="batch-h"><span class="t g">What</span> <span class="sm">a batch</span> <span class="t b">takes</span></h2>
+      <p>A typical washing-machine batch. Amounts change with the color and the weight of the fabric (see the dye log below).</p>
+    </div>
+    <div class="batch">
+      <div><b>2 Tbsp</b><span>Dharma dye, typical</span></div>
+      <div><b>⅙ bottle</b><span>Synthrapol for the wash-out</span></div>
+      <div><b>3 loads</b><span>Prep wash, dye, final wash</span></div>
+      <div><b>30 min</b><span>Hands-on time</span></div>
+    </div>
+  </section>
+
+  <!-- METHODS -->
+  <section aria-labelledby="meth-h">
+    <div class="head">
+      <p class="typed">Three ways I dye</p>
+      <h2 id="meth-h"><span class="t gb">Three</span> <span class="t s">methods</span></h2>
+    </div>
+    <div class="methods3">
+      <article class="m" id="washer">
+        <div class="ph shibori" role="img" aria-label="Photo to come: fabric in the washing machine"><span>[PHOTO: Washer dyeing]</span></div>
+        <h3>Washing machine</h3>
+        <p>The machine does the stirring, so the color comes out even. This is how I dye the solid baby blankets and throws.</p>
+        <dl><dt>LOOK</dt><dd>Smooth, solid color</dd><dt>GOOD FOR</dt><dd>Big pieces, matching sets</dd><dt>WATCH OUT</dt><dd>All that water dilutes the dye. Colors can come out much lighter than the chart.</dd></dl>
+      </article>
+      <article class="m" id="lwi">
+        <div class="ph tarot" role="img" aria-label="Photo to come: low water immersion bucket"><span>[PHOTO: Low water immersion]</span></div>
+        <h3>Low water immersion</h3>
+        <p>Fabric is scrunched into a bucket with just enough water to cover it. The dye can't move evenly, so it pools and leaves a mottled, painterly color.</p>
+        <dl><dt>LOOK</dt><dd>Mottled, deep, no two alike</dd><dt>GOOD FOR</dt><dd>Landscape skies and ridges, fixing a color that came out wrong</dd><dt>WATCH OUT</dt><dd>Less water makes the color strong. Measure carefully.</dd></dl>
+      </article>
+      <article class="m" id="shibori">
+        <div class="ph runner" role="img" aria-label="Photo to come: shibori folding and binding"><span>[PHOTO: Shibori]</span></div>
+        <h3>Shibori</h3>
+        <p>Folding, twisting, binding or clamping the cloth before it goes in the dye, so some parts resist the color. I learned it in classes at Wax On Boutique in Asheville.</p>
+        <dl><dt>LOOK</dt><dd>Patterns: stripes, rings, grids</dd><dt>GOOD FOR</dt><dd>Shibori throws, purses</dd><dt>WATCH OUT</dt><dd>You don't really know what you got until you untie it. That's the fun part.</dd></dl>
+      </article>
+    </div>
+  </section>
+
+  <!-- DYE LOG -->
+  <section id="log" aria-labelledby="log-h">
+    <div class="head">
+      <p class="typed">Dye log</p>
+      <h2 id="log-h"><span class="t o">Every</span> <span class="t b">batch</span></h2>
+      <p>Every batch, written down: the dye, the water, the weight of the fabric, and the result. The ones that went wrong are here too.</p>
+    </div>
+    <div class="log">
+
+      <article class="entry" id="truffle-1">
+        <div class="shots">
+          <div class="ph" style="background:#C9A39B" role="img" aria-label="Photo to come: truffle dye result"><span>[PHOTO: Result]</span></div>
+          <div class="ph" style="background:#B58F86" role="img" aria-label="Photo to come: close-up"><span>[PHOTO: Close-up]</span></div>
+        </div>
+        <div class="body">
+          <span class="status fix">Came out wrong</span>
+          <h3>No. 1 · Truffle, washing machine</h3>
+          <table>
+            <tr><th>DYE</th><td>Dharma, Truffle</td></tr>
+            <tr><th>METHOD</th><td>Washing machine</td></tr>
+            <tr><th>RATIO</th><td>The package ratio for the fabric weight [AMOUNT]</td></tr>
+            <tr><th>FABRIC</th><td>Cotton double gauze, [WEIGHT]</td></tr>
+            <tr><th>RESULT</th><td>Light rose, not truffle</td></tr>
+          </table>
+          <p class="swatch-pair"><i style="background:#7A5A4A"></i> expected <i style="background:#D3A9A2"></i> got</p>
+          <p>The ratio was right for the weight of the fabric, but the washer uses a lot of water. The dye was spread so thin that the color came out a light rose.</p>
+        </div>
+      </article>
+
+      <article class="entry" id="truffle-2">
+        <div class="shots">
+          <div class="ph" style="background:#6B2232" role="img" aria-label="Photo to come: dark cherry result"><span>[PHOTO: Result]</span></div>
+          <div class="ph" style="background:#5A1C2A" role="img" aria-label="Photo to come: close-up"><span>[PHOTO: Close-up]</span></div>
+        </div>
+        <div class="body">
+          <span class="status done">Fixed, and a keeper</span>
+          <h3>No. 2 · The fix: low water immersion over the rose</h3>
+          <table>
+            <tr><th>DYE</th><td>Dharma, Truffle</td></tr>
+            <tr><th>METHOD</th><td>Low water immersion, over-dyeing No. 1</td></tr>
+            <tr><th>AMOUNT</th><td>1 Tbsp + 1 tsp</td></tr>
+            <tr><th>WATER</th><td>[GALLONS]</td></tr>
+            <tr><th>FABRIC</th><td>The light rose double gauze from No. 1, [WEIGHT]</td></tr>
+            <tr><th>RESULT</th><td>Dark cherry</td></tr>
+          </table>
+          <p class="swatch-pair"><i style="background:#D3A9A2"></i> before <i style="background:#6B2232"></i> after</p>
+          <p>Less water and a heavier hand with the dye. Still not truffle, but a deep cherry, and now it's written down so I can make it again.</p>
+        </div>
+      </article>
+
+      <article class="entry" id="test-3">
+        <div class="shots">
+          <div class="ph"><img src="assets/photos/dye-batch-3-in-process.jpg" alt="Gloved hand lifting lilac-grey double gauze out of a tub of dark dye" loading="lazy"><span>In the dye</span></div>
+          <div class="ph" style="background:var(--cream)" role="img" aria-label="Photo to come: result"><span>[PHOTO: Result, coming]</span></div>
+        </div>
+        <div class="body">
+          <span class="status wait">In the dye now</span>
+          <h3>No. 3 · Going lighter on purpose</h3>
+          <table>
+            <tr><th>DYE</th><td>Dharma, [COLOR]</td></tr>
+            <tr><th>METHOD</th><td>[METHOD]</td></tr>
+            <tr><th>AMOUNT</th><td>1 tsp</td></tr>
+            <tr><th>WATER</th><td>3 gallons</td></tr>
+            <tr><th>FABRIC</th><td>[WEIGHT], matched to the ratio</td></tr>
+            <tr><th>RESULT</th><td>Photos when it's done</td></tr>
+          </table>
+          <p>After the cherry, I'm testing the other direction: just one teaspoon in three gallons, with the fabric weighed to match.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BLOG POST -->
+  <article class="post" id="truffle" aria-labelledby="post-h">
+    <p class="typed">From the journal</p>
+    <h2 id="post-h">I asked for truffle and got rose. Then cherry.</h2>
+    <p>I wanted a truffle brown. I measured the dye exactly the way the ratio says for the weight of my fabric, set the washing machine going, and waited.</p>
+    <p>It came out light rose. Pretty, but not even close to truffle.</p>
+    <p>Here's what I think happened: a washing machine uses a lot of water. The ratio was right for the fabric, but the dye was spread through so much water that only a little of it made it into the cloth. That gave me a pale, pinky version of the color.</p>
+    <p>So I over-dyed it with low water immersion: the same rose fabric, scrunched in a bucket with much less water, and a heavier hand with the dye.</p>
+    <blockquote>1 tablespoon + 1 teaspoon of truffle. Dark cherry.</blockquote>
+    <p>Still not truffle! But it's a deep, rich cherry, and I can get it again because I wrote it down.</p>
+    <p>That's the point of the dye log. Every batch goes in the notebook, mistakes included, because the mistakes are where the new colors come from. Next up, I'm going the other way: one teaspoon in three gallons of water, with the fabric weighed to match. Pictures when it's done.</p>
+  </article>
+
+  <!-- GALLERY -->
+  <section aria-labelledby="gal-h">
+    <div class="head">
+      <p class="typed">From the dye studio</p>
+      <h2 id="gal-h"><span class="t s">Fresh</span> <span class="sm">out of the</span> <span class="t x">bucket</span></h2>
+    </div>
+    <!-- Add photos to assets/photos/ and swap each slot for an <img>. -->
+    <div class="gallery">
+      <div class="ph"><img src="assets/photos/hand-dyed-double-gauze-blankets.jpg" alt="Hand-dyed double gauze in periwinkle, cornflower, sage and plum" loading="lazy"></div>
+      <div class="ph"><img src="assets/photos/dye-batch-3-in-process.jpg" alt="Double gauze soaking in a tub of dark dye, lifted with a gloved hand" loading="lazy"></div>
+      <div class="ph ridges" role="img" aria-label="Photo slot"><span>[PHOTO]</span></div>
+      <div class="ph runner" role="img" aria-label="Photo slot"><span>[PHOTO]</span></div>
+      <div class="ph tarot" role="img" aria-label="Photo slot"><span>[PHOTO]</span></div>
+      <div class="ph greenman" role="img" aria-label="Photo slot"><span>[PHOTO]</span></div>
+      <div class="ph placemat" role="img" aria-label="Photo slot"><span>[PHOTO]</span></div>
+      <div class="ph denim" role="img" aria-label="Photo slot"><span>[PHOTO]</span></div>
+    </div>
+  </section>
+
+  <!-- SAFETY + CARE -->
+  <section aria-labelledby="care-h">
+    <div class="head">
+      <p class="typed">Good to know</p>
+      <h2 id="care-h"><span class="t g">Safety</span> <span class="sm">&amp;</span> <span class="t gb">care</span></h2>
+    </div>
+    <div class="notes">
+      <div>
+        <h3>IF YOU TRY THIS AT HOME</h3>
+        <ul>
+          <li>Wear a dust mask and gloves when you measure dye powder. Fine powder is easy to breathe in.</li>
+          <li>Keep dye tools separate from kitchen tools, for good.</li>
+          <li>Soda ash is caustic, so gloves on for that too.</li>
+          <li>Run an empty hot wash after dyeing in the washing machine.</li>
+          <li>Write everything down, including the batches that go wrong.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>CARING FOR HAND-DYED PIECES</h3>
+        <ul>
+          <li>Every piece is washed out with Synthrapol before it leaves the house.</li>
+          <li>Wash with like colors in cold or warm water.</li>
+          <li>Hand-dyed color can shift a little in the first wash. That's normal.</li>
+          <li>Double gauze gets softer every time you wash it.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" style="background:var(--ink);color:var(--cream);padding:clamp(24px,4vw,44px);display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between">
+    <div style="display:flex;flex-direction:column;gap:10px;max-width:56ch">
+      <h2 style="font-family:var(--f-display);font-weight:900;font-size:clamp(24px,3.4vw,36px)">See what the dye turns into</h2>
+      <p style="opacity:.9">Baby blankets, throws, runners and the art quilts all start in these buckets. New colors go to the newsletter first.</p>
+    </div>
+    <div class="btns">
+      <a class="btn" style="background:var(--cream);color:var(--ink);border-color:var(--cream)" href="index.html#shop">Shop hand-dyed</a>
+      <a class="btn alt" style="color:var(--cream);border-color:var(--cream)" href="index.html#join">Get the calls</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 The Art is Coming from Inside the House</span>
+  <ul>
+    <li><a href="https://www.instagram.com/artiscomingfrominsidethehouse/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://www.etsy.com/shop/ArtHouseArtQuilts" target="_blank" rel="noopener">Etsy</a></li>
+    <li><a href="https://www.youtube.com/results?search_query=Kristi+Sews+Cool+Stuff" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
+</footer>
+</div>
+</body>
+</html>
