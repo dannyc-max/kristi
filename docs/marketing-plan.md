@@ -23,7 +23,7 @@ The automatic welcome email (`docs/welcome-email.md`) goes out the moment someon
 |---|---|---|
 | **Tue Nov 3** | Thanksgiving is Nov 26, and orders need time to ship | **Set the table.** Runners and placemats styled for a holiday table. Subscribers see new colorways a day before Etsy. Thank-you and photos from the festival. |
 | **Tue Dec 1** | Giving Tuesday, just after Small Business Saturday (Nov 28) | **Handmade gifts.** Bookmarks as stocking stuffers (link to the free pattern again), kits for the sewist in their life, throws. Etsy holiday shipping cutoff (check Etsy's posted date). |
-| **Mid-January** (around Jan 12) | New year, cold weather | **Upcycled: old clothes, new things.** The 2012 upcycling posts brought back: an old sweater turned into leg warmers, a man's shirt into a toddler dress. Ties to the upcycled kids' dresses you sell now. |
+| **Mid-January** (around Jan 12) | New year, buy-less resolutions, cold weather | **Upcycled: old clothes, new things.** The 2012 upcycling posts brought back: an old sweater turned into leg warmers, a man's shirt into a toddler dress. Ties to the upcycled kids' dresses you sell now. |
 | **February**, around QuiltCon | QuiltCon 2027 (check the dates) | **Soft materials, loud opinions.** Protest and political quilts you admire (credit the makers), what you're bringing or hoping to see, a new Stitch Library card. |
 | **Around Sat Mar 20** | National Quilting Day is the third Saturday in March | **Spring dye day.** New colorways, a process reel, and readers' bookmark photos if anyone sends them. |
 | **Around Apr 22** | Earth Day | **Scraps and salvage.** Upcycled denim, how you use dye-batch leftovers, spring fair dates. |
@@ -44,7 +44,7 @@ How to use them:
 
 - On the website, run them as **"From the vault · 2012"** journal posts. The homepage already has a slot for the sweater/leg warmers post.
 - Give each a new 2–3 sentence intro about what you'd do the same or differently now.
-- Use them in the **January email**, which has the best timing (new year, cold weather).
+- Use them in the **January email**, which has the best timing (cold weather, buy-less resolutions).
 - Turn them into Reels too: a quick before/after reads well on Instagram.
 
 *I couldn't find these posts in your Drive or Gmail. Send the links or paste the text and I'll write the intros.*
