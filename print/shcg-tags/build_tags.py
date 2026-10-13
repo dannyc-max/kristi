@@ -336,4 +336,77 @@ bookmarks = doc("SHCG Bookmark Labels", (
 open("bookmark-labels-8363.html", "w").write(bookmarks)
 open("bookmark-labels-8363-color.html", "w").write(
     bookmarks.replace('<section class="page B">', '<style>' + COLOR_CSS + '</style><section class="page B color">'))
+# --- Colour backs, sized a little larger than the fronts so the back frames the piece ---
+CELL_CSS = """
+.sheet{display:grid;border-top:.5pt dashed #999;border-left:.5pt dashed #999}
+.cell{position:relative;overflow:hidden;border-right:.5pt dashed #999;border-bottom:.5pt dashed #999}
+.cell .tag{border:0}
+"""
+# Art & purse backs: 5 x 3.5 in (the 4 x 2.5 front plus 1/2 in all around).
+# Printed sideways, 4 to a sheet, so the 8 backs take 2 sheets instead of 3.
+XL_CSS = """
+.XL .cell{width:3.5in;height:5in}
+.XL .rot{position:absolute;left:-.75in;top:.75in;width:5in;height:3.5in;transform:rotate(90deg)}
+.XL .tag{width:5in;height:3.5in;padding:.22in .3in;gap:9pt}
+.XL .back .wm{font-size:10pt}
+.XL .back .bk{gap:16pt}
+.XL .back .qr{width:1.45in;height:1.45in}
+.XL .back .qrcol{width:1.75in}
+.XL .back .scan{font-size:7.8pt}
+.XL .back .contact{font-size:8pt}
+"""
+# Bookmark backs: 2 x 5 in. Same 2 in width as the bookmark, 1/2 in longer than the
+# 2 x 4 front at each end. 8 on one sheet (6 on the list + 2 spares).
+BB_CSS = """
+.BB .cell{width:2in;height:5in}
+.BB .tag{width:2in;height:5in;padding:.22in .14in;justify-content:center;gap:12pt}
+.BB .back .wm{font-size:9pt}
+.BB .back .bk{flex-direction:column;gap:12pt}
+.BB .back .qr{width:1.35in;height:1.35in}
+.BB .back .qrcol{width:1.6in;gap:5pt}
+.BB .back .scan{font-size:7pt}
+.BB .back .contact{font-size:6.4pt;text-align:center}
+"""
+
+
+def sheet(cls, cols, cells, note):
+    return (f'<section class="page {cls} color"><p class="note">{escape(note)}</p>'
+            f'<div class="sheet" style="grid-template-columns:repeat({cols},auto)">{cells}</div></section>')
+
+
+def colordoc(title, extra_css, body):
+    return doc(title, "<style>" + COLOR_CSS + CELL_CSS + extra_css + "</style>" + body)
+
+
+xl = '<div class="cell"><div class="rot">' + back() + '</div></div>'
+art_backs = colordoc("SHCG Art Backs Color", XL_CSS, "".join(
+    sheet("XL", 2, xl * 4, f"COLOR · BACKS {k} of 2 · art quilts & purses · 5 x 3.5 in · Avery 5265 · print at 100% · cut on dashed lines")
+    for k in (1, 2)))
+open("art-backs-color.html", "w").write(art_backs)
+
+bm_backs = colordoc("SHCG Bookmark Backs Color", BB_CSS, sheet(
+    "BB", 4, ('<div class="cell">' + back() + '</div>') * 8,
+    "COLOR · bookmark BACKS · 2 x 5 in · Avery 5265 · print at 100% · cut on dashed lines · 6 + 2 spares"))
+open("bookmark-backs-color.html", "w").write(bm_backs)
+
+# Shibori throw tags in colour: 4 on one sheet of cardstock, double-sided.
+# The grid is centred, so flipping on the long edge lines the backs up with the fronts.
+TC_CSS = """
+.TC{place-items:center;padding-top:0}
+.TC .cell{width:3.5in;height:5in}
+.TC .tag.mid,.TC .tag:not(.back){gap:7pt}
+.TC .tag:not(.back) .wm{font-size:11.5pt}
+.TC .tag:not(.back) h2{font-size:20pt}
+.TC .tag:not(.back) .lines{font-size:10.5pt}
+.TC .care{font-size:8.6pt}
+.TC .tag:not(.back) .price{font-size:26pt}
+.TC .back .wm{font-size:11pt}
+"""
+hole = '<span class="hole"></span>'
+throws_color = colordoc("SHCG Throw Tags Color", TC_CSS, (
+    sheet("T TC", 2, ('<div class="cell">' + throw_tag + '</div>') * 4,
+          "COLOR · FRONT · Shibori throw tags · cardstock · print at 100% · 2 for SHCG + 2 for Waynesville") +
+    sheet("T TC", 2, ('<div class="cell">' + back(hole) + '</div>') * 4,
+          "BACK · print double-sided, flip on long edge")))
+open("throw-tags-color.html", "w").write(throws_color)
 print("ok")
