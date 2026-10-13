@@ -68,8 +68,8 @@ html,body{margin:0;background:#fff;color:#000;font-family:"Archivo",Arial,sans-s
 .page{width:8.5in;height:11in;display:grid;place-items:center;page-break-after:always;position:relative}
 .page:last-child{page-break-after:auto}
 .note{position:absolute;top:.12in;left:0;right:0;text-align:center;font-family:"Special Elite",monospace;font-size:7pt;color:#777}
-.grid{display:grid;border-top:.5pt dashed #999;border-left:.5pt dashed #999}
-.tag{border-right:.5pt dashed #999;border-bottom:.5pt dashed #999;padding:.12in .14in;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.grid{display:grid}
+.tag{padding:.12in .14in;display:flex;flex-direction:column;overflow:hidden;position:relative}
 .wm{display:flex;flex-wrap:wrap;justify-content:center;gap:2pt 2.5pt;line-height:1;font-weight:900;margin:0 auto}
 .wm span{padding:1.2pt 3pt;display:inline-block}
 .wm .w1{font-family:"Special Elite",monospace;font-weight:400;border:.75pt solid #000;transform:rotate(-3deg)}
@@ -267,8 +267,8 @@ def doc(title, body):
 
 
 stickers = doc("SHCG Sticker Tags", "".join([
-    page("L", 2, ART, "Sheet 1 of 4 · FRONTS · art quilts & purses · Avery 5265 · print at 100%, black and white · cut on dashed lines"),
-    page("M", 3, SHEET2, "Sheet 2 of 4 · FRONTS · patterns (8) & kits (7), includes 2 spares of each · cut on dashed lines"),
+    page("L", 2, ART, "Sheet 1 of 4 · FRONTS · art quilts & purses · Avery 5265 · print at 100%, black and white"),
+    page("M", 3, SHEET2, "Sheet 2 of 4 · FRONTS · patterns (8) & kits (7), includes 2 spares of each"),
     backs("L", 2, 8, "Sheet 3 of 4 · BACKS · art quilts & purses · stick on the back of each cardstock tag"),
     backs("M", 3, 12, "Sheet 4 of 4 · BACKS · patterns & kits · fits the 7/8 sheet (top 4 rows)"),
 ]))
@@ -291,7 +291,7 @@ COLOR_CSS = """
 .color .who{color:#4A2436}
 """
 color = doc("SHCG Art Tags Color", "<style>" + COLOR_CSS + "</style>" + page(
-    "L color", 2, ART, "COLOR · art quilts & purses fronts · Avery 5265 · print at 100% · cut on dashed lines"))
+    "L color", 2, ART, "COLOR · art quilts & purses fronts · Avery 5265 · print at 100%"))
 open("art-tags-color.html", "w").write(color)
 
 care = ('<p class="care">Colorway: ______________________<br><br>'
@@ -300,7 +300,7 @@ care = ('<p class="care">Colorway: ______________________<br><br>'
         'Natural fibers will lighten naturally in the sun over time.</p>')
 throw_tag = tag(THROW, '<span class="hole"></span>').replace('<div class="price">', care + '<div class="price">')
 throws = doc("SHCG Throw Tags", (
-    '<section class="page T"><p class="note">Cardstock · print at 100% · cut on dashed lines, punch circle, '
+    '<section class="page T"><p class="note">Cardstock · print at 100%, punch circle, '
     'pink ribbon · keep the unused bottom half</p>'
     f'<div class="grid" style="grid-template-columns:repeat(2,auto)">{throw_tag * 2}</div></section>'
     '<section class="page T"><p class="note">BACK · print double-sided, flip on long edge</p>'
@@ -338,8 +338,8 @@ open("bookmark-labels-8363-color.html", "w").write(
     bookmarks.replace('<section class="page B">', '<style>' + COLOR_CSS + '</style><section class="page B color">'))
 # --- Colour backs, sized a little larger than the fronts so the back frames the piece ---
 CELL_CSS = """
-.sheet{display:grid;border-top:.5pt dashed #999;border-left:.5pt dashed #999}
-.cell{position:relative;overflow:hidden;border-right:.5pt dashed #999;border-bottom:.5pt dashed #999}
+.sheet{display:grid}
+.cell{position:relative;overflow:hidden}
 .cell .tag{border:0}
 """
 # Art & purse backs: 5 x 3.5 in (the 4 x 2.5 front plus 1/2 in all around).
@@ -380,20 +380,22 @@ def colordoc(title, extra_css, body):
 
 xl = '<div class="cell"><div class="rot">' + back() + '</div></div>'
 art_backs = colordoc("SHCG Art Backs Color", XL_CSS, "".join(
-    sheet("XL", 2, xl * 4, f"COLOR · BACKS {k} of 2 · art quilts & purses · 5 x 3.5 in · Avery 5265 · print at 100% · cut on dashed lines")
+    sheet("XL", 2, xl * 4, f"COLOR · BACKS {k} of 2 · art quilts & purses · 5 x 3.5 in · Avery 5265 · print at 100%")
     for k in (1, 2)))
 open("art-backs-color.html", "w").write(art_backs)
 
 bm_backs = colordoc("SHCG Bookmark Backs Color", BB_CSS, sheet(
     "BB", 4, ('<div class="cell">' + back() + '</div>') * 8,
-    "COLOR · bookmark BACKS · 2 x 5 in · Avery 5265 · print at 100% · cut on dashed lines · 6 + 2 spares"))
+    "COLOR · bookmark BACKS · 2 x 5 in · Avery 5265 · print at 100% · 6 + 2 spares"))
 open("bookmark-backs-color.html", "w").write(bm_backs)
 
 # Shibori throw tags in colour: 4 on one sheet of cardstock, double-sided.
 # The grid is centred, so flipping on the long edge lines the backs up with the fronts.
 TC_CSS = """
-.TC{place-items:center;padding-top:0}
-.TC .cell{width:3.5in;height:5in}
+.TC{place-items:start;padding:0}
+.TC .note{display:none}
+.TC .cell{width:4.25in;height:5.5in}
+.TC .tag{width:4.25in;height:5.5in;padding:.5in .4in .3in}
 .TC .tag.mid,.TC .tag:not(.back){gap:7pt}
 .TC .tag:not(.back) .wm{font-size:11.5pt}
 .TC .tag:not(.back) h2{font-size:20pt}
@@ -406,7 +408,7 @@ hole = '<span class="hole"></span>'
 throws_color = colordoc("SHCG Throw Tags Color", TC_CSS, (
     sheet("T TC", 2, ('<div class="cell">' + throw_tag + '</div>') * 4,
           "COLOR · FRONT · Shibori throw tags · cardstock · print at 100% · 2 for SHCG + 2 for Waynesville") +
-    sheet("T TC", 2, ('<div class="cell">' + back(hole) + '</div>') * 4,
+    sheet("T TC", 2, ('<div class="cell">' + back() + '</div>') * 4,
           "BACK · print double-sided, flip on long edge")))
 open("throw-tags-color.html", "w").write(throws_color)
 print("ok")
