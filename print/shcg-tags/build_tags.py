@@ -11,7 +11,7 @@ HANDLE = "@artiscomingfrominsidethehouse"
 
 # From the SHCG inventory list sent to Local Cloth (Oct 9). n = line on the list.
 ART = [  # sheet 1: large tags, 4 x 2.5 in, to stick on cardstock or the back of a piece
-    dict(n=1, title="Graybeard Mtn Panoramic", lines=["Art quilt · 33 × 35 in", "Upcycled denim, hand-dyed linen & cotton double gauze"], price=770),
+    dict(n=1, title="Graybeard Mtn Panoramic", lines=["Art quilt · 33 × 35 in · Framed · Signed", "Hand-dyed linen, rayon & cotton (shibori & ice dyeing)", "with upcycled denim & cotton", "Hand-finished; quilted with seed stitch & couching"], price=770),
     dict(n=2, title="Ace of Cups", lines=["Art quilt · tarot series · 18 × 24 in", "Signed in thread: KJC"], price=650),
     dict(n=3, title="Landscape Art Quilt Sample", lines=["Made from the pattern, with binding", "and a macramé dowel hanger"], price=160),
     dict(n=4, title="Clouds and Sunset", lines=["Small art quilt"], price=250),
@@ -145,6 +145,9 @@ h2{margin:0;font-weight:900;line-height:1.05}
 .L .mid h2{font-size:14pt}
 .L .mid .lines{font-size:8pt}
 .L .wm.stack{font-size:17pt}
+.L .dense .wm.stack{font-size:12pt;gap:2pt}
+.L .dense .wm.stack .row{gap:2pt}
+.L .dense .wm.stack span{padding:1.4pt 3.5pt}
 .L .bottom .price{font-size:18pt}
 .L .bottom .scissors{width:.55in}
 .L .bottom .who{font-size:5.6pt}
@@ -187,7 +190,7 @@ def tag_mid(item, rows):
     """Name, then description, then the logo filling the middle, then price, scissors and maker."""
     lines = "<br>".join(escape(l) for l in item["lines"])
     return (
-        f'<div class="tag mid">{NEEDLE}'
+        f'<div class="tag mid{" dense" if len(item["lines"]) >= 4 else ""}">{NEEDLE}'
         f'<h2>{escape(item["title"])}</h2><p class="lines">{lines}</p>'
         f'<div class="logo-zone">{stacked_logo(rows)}</div>'
         f'<div class="bottom"><div class="who">{ARTIST}<br><span class="hd">{HANDLE}</span><br>CORIDEN #{item["n"]}</div>'
