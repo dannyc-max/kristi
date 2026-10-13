@@ -274,6 +274,26 @@ stickers = doc("SHCG Sticker Tags", "".join([
 ]))
 open("sticker-sheets.html", "w").write(stickers)
 
+# Colour version of the art & purse fronts, in the logo palette
+COLOR_CSS = """
+.color{color:#4A2436}
+.color .tag{color:#4A2436}
+.color .lines{color:#4A2436}
+.color .wm .w1{background:#4A2436;color:#F1EBDF;border-color:#4A2436}
+.color .wm .w2{background:#A14B34;color:#F1EBDF}
+.color .wm .w3{background:#fff;color:#1B3F8D;border:.9pt solid #1B3F8D}
+.color .wm .w4{background:#8C9DAF;color:#4A2436;border-color:#4A2436}
+.color .wm .w5{background:#5A5C2E;color:#F1EBDF}
+.color .wm .w6{background:#1B3F8D;color:#F1EBDF;border-color:#1B3F8D;box-shadow:none}
+.color .wm .w7{background:#6E8B67;color:#F1EBDF;border-color:#6E8B67}
+.color .wm .w8{background:#F1EBDF;color:#4A2436;border-color:#4A2436}
+.color .price{color:#A14B34}
+.color .who{color:#4A2436}
+"""
+color = doc("SHCG Art Tags Color", "<style>" + COLOR_CSS + "</style>" + page(
+    "L color", 2, ART, "COLOR · art quilts & purses fronts · Avery 5265 · print at 100% · cut on dashed lines"))
+open("art-tags-color.html", "w").write(color)
+
 care = ('<p class="care">Colorway: ______________________<br><br>'
         '<b>Care:</b> Wash cold, by itself. Do not wash with anything else.<br><br>'
         'Hand-dyed and treated with a dye fixative detergent, so colors should not bleed. '
