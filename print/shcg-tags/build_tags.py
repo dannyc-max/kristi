@@ -168,6 +168,33 @@ h2{margin:0;font-weight:900;line-height:1.05}
 .M .qrbox .who{font-size:4.4pt}
 .T .qr{width:.68in;height:.68in}
 .T .qrbox .who{font-size:7pt;text-align:left}
+/* back of tag */
+.page.top{place-items:start center;padding-top:.4in}
+.tag.back{align-items:center;justify-content:center;gap:5pt}
+.back .bk{display:flex;align-items:center;justify-content:center;gap:10pt;width:100%}
+.back .qrcol{display:flex;flex-direction:column;align-items:center;gap:3pt;flex:none}
+.back .scan{margin:0;text-align:center;font-weight:700;line-height:1.2}
+.back .contact{margin:0;text-align:left;font-family:"Special Elite",monospace;line-height:1.45;min-width:0;overflow-wrap:anywhere}
+.back .contact b{font-family:"Archivo",sans-serif;font-weight:900}
+.L .back .qr{width:1.15in;height:1.15in}
+.L .back .qrcol{width:1.45in}
+.L .back .scan{font-size:6.6pt}
+.L .back .contact{font-size:7pt}
+.L .back .wm{font-size:7pt}
+.M .tag.back{gap:3pt}
+.M .back .bk{gap:6pt}
+.M .back .qr{width:.9in;height:.9in}
+.M .back .qrcol{width:1.05in}
+.M .back .scan{font-size:5pt}
+.M .back .contact{font-size:4.8pt}
+.M .back .wm{font-size:4.6pt;gap:1pt 1.4pt}
+.M .back .wm span{padding:.6pt 1.4pt}
+.T .tag.back{justify-content:flex-start;padding-top:.5in;gap:10pt}
+.T .back .bk{flex-direction:column;gap:12pt}
+.T .back .qr{width:1.6in;height:1.6in}
+.T .back .qrcol{width:2.4in}
+.T .back .scan{font-size:10pt}
+.T .back .contact{font-size:8.5pt;text-align:center}
 """
 
 FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=Fraunces:ital,opsz,wght@1,9..144,700&family=Special+Elite&display=swap">'
@@ -179,12 +206,14 @@ def tag(item, extra=""):
         f'<div class="tag">{extra}{NEEDLE}{WORDMARK}'
         f'<h2>{escape(item["title"])}</h2><p class="lines">{lines}</p>'
         f'<div class="price">${item["price"]}</div>'
-        f'<div class="foot">{SCISSORS}<div class="qrbox">{QR}<div class="who">{ARTIST}<br>Scan for the website<br>'
-        f'Instagram <span class="hd">{HANDLE}</span><br>CORIDEN #{item["n"]}</div></div></div></div>'
+        f'<div class="foot">{SCISSORS}<div class="who">{ARTIST} · {MEMBER}</div></div></div>'
     )
 
 
-QR = open("qr-website.svg").read()  # links to theartiscomingfrominsidethehouse.com
+QR = open("qr-signup.svg").read()  # opens the newsletter sign-up page
+EMAIL = "kristicoriden@gmail.com"
+ETSY = "etsy.com/shop/ArtHouseArtQuilts"
+MEMBER = "Local Cloth member"
 
 WORDS = {"THE": "w1", "ART": "w2", "is": "w3", "COMING": "w4", "from": "w5", "INSIDE": "w6", "the": "w7", "HOUSE": "w8"}
 ROWS3 = [["THE", "ART", "is"], ["COMING", "from"], ["INSIDE", "the", "HOUSE"]]
@@ -204,10 +233,26 @@ def tag_mid(item, rows):
         f'<div class="tag mid{" dense" if len(item["lines"]) >= 4 else ""}">{NEEDLE}'
         f'<h2>{escape(item["title"])}</h2><p class="lines">{lines}</p>'
         f'<div class="logo-zone">{stacked_logo(rows)}</div>'
-        f'<div class="bottom"><div class="qrbox">{QR}<div class="who">{ARTIST}<br>Scan for the website<br>'
-        f'Instagram <span class="hd">{HANDLE}</span><br>CORIDEN #{item["n"]}</div></div>'
+        f'<div class="bottom"><div class="who">{ARTIST}<br>{MEMBER}</div>'
         f'{SCISSORS}<div class="price">${item["price"]}</div></div></div>'
     )
+
+
+
+def back(extra=""):
+    """Back of a tag: QR to the newsletter sign-up, then Instagram, Etsy, email, Local Cloth member."""
+    return (
+        f'<div class="tag back">{extra}{WORDMARK}<div class="bk">'
+        f'<div class="qrcol">{QR}<p class="scan">Scan to get email announcements about upcoming in-person events</p></div>'
+        f'<p class="contact"><b>Instagram</b> {HANDLE}<br><b>Etsy</b> {ETSY}<br><b>Email</b> {EMAIL}<br>{MEMBER}</p>'
+        f'</div></div>'
+    )
+
+
+def backs(cls, cols, count, note):
+    cells = back() * count
+    return (f'<section class="page {cls} top"><p class="note">{escape(note)}</p>'
+            f'<div class="grid" style="grid-template-columns:repeat({cols},auto)">{cells}</div></section>')
 
 
 def page(cls, cols, items, note, rows=ROWS3):
@@ -222,8 +267,10 @@ def doc(title, body):
 
 
 stickers = doc("SHCG Sticker Tags", "".join([
-    page("L", 2, ART, "Sheet 1 of 2 · art quilts & purses · Avery 5265 · print at 100%, black and white · cut on dashed lines"),
-    page("M", 3, SHEET2, "Sheet 2 of 2 · patterns (8) & kits (7), includes 2 spares of each · cut on dashed lines"),
+    page("L", 2, ART, "Sheet 1 of 4 · FRONTS · art quilts & purses · Avery 5265 · print at 100%, black and white · cut on dashed lines"),
+    page("M", 3, SHEET2, "Sheet 2 of 4 · FRONTS · patterns (8) & kits (7), includes 2 spares of each · cut on dashed lines"),
+    backs("L", 2, 8, "Sheet 3 of 4 · BACKS · art quilts & purses · stick on the back of each cardstock tag"),
+    backs("M", 3, 12, "Sheet 4 of 4 · BACKS · patterns & kits · fits the 7/8 sheet (top 4 rows)"),
 ]))
 open("sticker-sheets.html", "w").write(stickers)
 
@@ -235,7 +282,9 @@ throw_tag = tag(THROW, '<span class="hole"></span>').replace('<div class="price"
 throws = doc("SHCG Throw Tags", (
     '<section class="page T"><p class="note">Cardstock · print at 100% · cut on dashed lines, punch circle, '
     'pink ribbon · keep the unused bottom half</p>'
-    f'<div class="grid" style="grid-template-columns:repeat(2,auto)">{throw_tag * 2}</div></section>'))
+    f'<div class="grid" style="grid-template-columns:repeat(2,auto)">{throw_tag * 2}</div></section>'
+    '<section class="page T"><p class="note">BACK · print double-sided, flip on long edge</p>'
+    f'<div class="grid" style="grid-template-columns:repeat(2,auto)">{back(chr(60)+"span class=hole></span>") * 2}</div></section>'))
 open("throw-tags-cardstock.html", "w").write(throws)
 # 2 x 4 label sheet: 2 columns x 5 rows, 0.5 in top margin, 0.156 in side margin, 0.1875 in gutter.
 # Each label is printed sideways so it reads top to bottom on a 2 in wide bookmark.
@@ -256,7 +305,7 @@ bm_css = """
 .B .wm.stack .row{gap:3pt}
 .B .bottom{flex-direction:column;align-items:center;gap:3pt}
 .B .bottom .qrbox{order:3;flex-direction:column;gap:2pt}
-.B .bottom .who{text-align:center;font-size:5.4pt}
+.B .bottom .who{order:3;text-align:center;font-size:5.4pt}
 .B .qr{width:.6in;height:.6in}
 .B .bottom .scissors{order:2;width:.55in}
 .B .bottom .price{order:1;font-size:20pt;text-align:center}
