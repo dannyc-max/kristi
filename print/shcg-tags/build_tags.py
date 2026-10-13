@@ -334,4 +334,6 @@ bookmarks = doc("SHCG Bookmark Labels", (
     '<style>' + bm_css + '</style><section class="page B"><p class="note">Avery 8363 · 2 x 4 in labels · print at 100% · '
     'test on plain paper first · 6 for the list + 4 for restocking</p>' + "".join(cells) + '</section>'))
 open("bookmark-labels-8363.html", "w").write(bookmarks)
+open("bookmark-labels-8363-color.html", "w").write(
+    bookmarks.replace('<section class="page B">', '<style>' + COLOR_CSS + '</style><section class="page B color">'))
 print("ok")
