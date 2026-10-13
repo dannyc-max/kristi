@@ -287,7 +287,7 @@ COLOR_CSS = """
 .color .wm .w6{background:#1B3F8D;color:#F1EBDF;border-color:#1B3F8D;box-shadow:none}
 .color .wm .w7{background:#6E8B67;color:#F1EBDF;border-color:#6E8B67}
 .color .wm .w8{background:#F1EBDF;color:#4A2436;border-color:#4A2436}
-.color .price{color:#A14B34}
+.color .price{color:#000}
 .color .who{color:#4A2436}
 """
 color = doc("SHCG Art Tags Color", "<style>" + COLOR_CSS + "</style>" + page(
