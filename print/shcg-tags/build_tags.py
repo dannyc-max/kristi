@@ -411,4 +411,33 @@ throws_color = colordoc("SHCG Throw Tags Color", TC_CSS, (
     sheet("T TC", 2, ('<div class="cell">' + back() + '</div>') * 4,
           "BACK · print double-sided, flip on long edge")))
 open("throw-tags-color.html", "w").write(throws_color)
+# Pattern and kit price stickers on Avery 8363 (2 x 4 in, 10 per sheet), black and white.
+# One full sheet of patterns, one full sheet of kits. Printed upright (4 wide x 2 tall).
+pk_css = """
+.P{display:block;overflow:hidden}
+.P .cell{position:absolute;width:4in;height:2in}
+.P .tag{width:4in;height:2in;padding:.1in .18in;gap:2pt}
+.P .needle{height:6pt}
+.P h2{font-size:12.5pt}
+.P .lines{font-size:7.5pt}
+.P .wm.stack{font-size:8.5pt;gap:1.5pt}
+.P .wm.stack .row{gap:2pt}
+.P .wm.stack span{padding:1pt 3pt}
+.P .bottom .price{font-size:17pt}
+.P .bottom .scissors{width:.45in}
+.P .bottom .who{font-size:5.6pt}
+"""
+
+
+def label_sheet(item, note):
+    cells = "".join(
+        f'<div class="cell" style="left:{0.15625 + (i % 2) * 4.1875}in;top:{0.5 + (i // 2) * 2}in">{tag_mid(item, ROWS3)}</div>'
+        for i in range(10))
+    return f'<section class="page P"><p class="note">{escape(note)}</p>{cells}</section>'
+
+
+pk = doc("SHCG Pattern and Kit Labels", "<style>" + pk_css + "</style>" +
+         label_sheet(PATTERN, "Avery 8363 · patterns · print at 100%") +
+         label_sheet(KIT, "Avery 8363 · kits · print at 100%"))
+open("pattern-kit-labels-8363.html", "w").write(pk)
 print("ok")
