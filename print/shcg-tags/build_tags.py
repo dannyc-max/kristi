@@ -121,14 +121,14 @@ h2{margin:0;font-weight:900;line-height:1.05}
 .S .hd{display:block}
 /* cardstock throw tag: 3.5 x 5, hole at top */
 .T{place-items:start center;padding-top:.4in}
-.T .tag{width:3.5in;height:5in;gap:7pt;padding:.46in .22in .2in}
+.T .tag{width:3.5in;height:5in;gap:4pt;padding:.42in .22in .14in}
 .T .hole{position:absolute;top:.14in;left:50%;width:.22in;height:.22in;margin-left:-.11in;border:.75pt solid #000;border-radius:50%}
 .T .needle{height:11pt}
 .T .wm{font-size:10pt}
 .T h2{font-size:17pt}
 .T .lines{font-size:9.5pt}
-.T .care{font-size:8pt;line-height:1.35;border-top:.75pt solid #777;padding-top:6pt;width:100%;margin:0}
-.T .price{font-size:26pt}
+.T .care{font-size:7.6pt;line-height:1.3;border-top:.75pt solid #777;padding-top:6pt;width:100%;margin:0}
+.T .price{font-size:22pt}
 .T .scissors{width:.75in}
 .T .who{font-size:7pt}
 /* logo-in-the-middle layout (all tags except the throws) */
@@ -144,8 +144,8 @@ h2{margin:0;font-weight:900;line-height:1.05}
 .L .mid .needle,.M .mid .needle{height:6pt}
 .L .mid h2{font-size:14pt}
 .L .mid .lines{font-size:8pt}
-.L .wm.stack{font-size:17pt}
-.L .dense .wm.stack{font-size:12pt;gap:2pt}
+.L .wm.stack{font-size:13.5pt;gap:2pt}
+.L .dense .wm.stack{font-size:10pt;gap:1.5pt}
 .L .dense .wm.stack .row{gap:2pt}
 .L .dense .wm.stack span{padding:1.4pt 3.5pt}
 .L .bottom .price{font-size:18pt}
@@ -160,6 +160,14 @@ h2{margin:0;font-weight:900;line-height:1.05}
 .M .bottom .price{font-size:13pt}
 .M .bottom .scissors{width:.38in}
 .M .bottom .who{font-size:4.2pt}
+/* QR code to the website, with the Instagram call-out beside it */
+.qrbox{display:flex;align-items:center;gap:4pt;text-align:left}
+.qr{display:block;flex:none;width:.55in;height:.55in}
+.L .qr{width:.58in;height:.58in}
+.M .qr{width:.5in;height:.5in}
+.M .qrbox .who{font-size:4.4pt}
+.T .qr{width:.68in;height:.68in}
+.T .qrbox .who{font-size:7pt;text-align:left}
 """
 
 FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=Fraunces:ital,opsz,wght@1,9..144,700&family=Special+Elite&display=swap">'
@@ -171,9 +179,12 @@ def tag(item, extra=""):
         f'<div class="tag">{extra}{NEEDLE}{WORDMARK}'
         f'<h2>{escape(item["title"])}</h2><p class="lines">{lines}</p>'
         f'<div class="price">${item["price"]}</div>'
-        f'<div class="foot">{SCISSORS}<div class="who">{ARTIST}<span class="sep"> · </span><span class="hd">{HANDLE}</span><br>CORIDEN #{item["n"]}</div></div></div>'
+        f'<div class="foot">{SCISSORS}<div class="qrbox">{QR}<div class="who">{ARTIST}<br>Scan for the website<br>'
+        f'Instagram <span class="hd">{HANDLE}</span><br>CORIDEN #{item["n"]}</div></div></div></div>'
     )
 
+
+QR = open("qr-website.svg").read()  # links to theartiscomingfrominsidethehouse.com
 
 WORDS = {"THE": "w1", "ART": "w2", "is": "w3", "COMING": "w4", "from": "w5", "INSIDE": "w6", "the": "w7", "HOUSE": "w8"}
 ROWS3 = [["THE", "ART", "is"], ["COMING", "from"], ["INSIDE", "the", "HOUSE"]]
@@ -193,7 +204,8 @@ def tag_mid(item, rows):
         f'<div class="tag mid{" dense" if len(item["lines"]) >= 4 else ""}">{NEEDLE}'
         f'<h2>{escape(item["title"])}</h2><p class="lines">{lines}</p>'
         f'<div class="logo-zone">{stacked_logo(rows)}</div>'
-        f'<div class="bottom"><div class="who">{ARTIST}<br><span class="hd">{HANDLE}</span><br>CORIDEN #{item["n"]}</div>'
+        f'<div class="bottom"><div class="qrbox">{QR}<div class="who">{ARTIST}<br>Scan for the website<br>'
+        f'Instagram <span class="hd">{HANDLE}</span><br>CORIDEN #{item["n"]}</div></div>'
         f'{SCISSORS}<div class="price">${item["price"]}</div></div></div>'
     )
 
@@ -243,7 +255,9 @@ bm_css = """
 .B .wm.stack{font-size:15pt;gap:4pt}
 .B .wm.stack .row{gap:3pt}
 .B .bottom{flex-direction:column;align-items:center;gap:3pt}
-.B .bottom .who{order:3;text-align:center;font-size:5.4pt}
+.B .bottom .qrbox{order:3;flex-direction:column;gap:2pt}
+.B .bottom .who{text-align:center;font-size:5.4pt}
+.B .qr{width:.6in;height:.6in}
 .B .bottom .scissors{order:2;width:.55in}
 .B .bottom .price{order:1;font-size:20pt;text-align:center}
 """
