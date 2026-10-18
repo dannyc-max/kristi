@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Newsletter</title>
-<meta name="description" content="Join the newsletter and get the free Ridgeline Bookmarks pattern.">
+<meta name="description" content="Join the newsletter for studio news, new work and fair dates.">
 <link rel="icon" href="assets/logo/The_Art_is_Coming_from_Inside_the_House_logo_transparent.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,17 +31,6 @@
 
 <main class="wrap" id="top">
 
-    <div class="freebie">
-      <div class="bm" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div>
-        <p class="typed">Free pattern</p>
-        <h3>Ridgeline Bookmarks</h3>
-        <p>A miniature landscape, layered, stitched and cut into three 2″ × 6″ bookmarks. Free with newsletter sign-up.</p>
-      </div>
-      <a class="btn" href="#signup">Get the pattern</a>
-    </div>
-
-
   <!-- JOIN -->
   <section id="join" class="join-box" aria-labelledby="join-h">
     <div class="join-copy">
@@ -49,7 +38,6 @@
       <h2 id="join-h">The newsletter</h2>
       <p>Occasional notes from the studio: new work, fairs and exhibitions, and early access to new pieces.</p>
       <ul>
-        <li>The Ridgeline Bookmarks pattern, free on sign-up</li>
         <li>Early access to new runners and placemats</li>
         <li>New techniques for the Stitch Library</li>
       </ul>
@@ -99,7 +87,7 @@ document.getElementById("signup").addEventListener("submit", async (e) => {
   try {
     const res = await fetch(SIGNUP_URL, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(e.target) });
     if (!res.ok) throw new Error();
-    status.textContent = "You're on the list! I'll send the free bookmark pattern to your inbox soon.";
+    status.textContent = "You're on the list. Thank you!";
     e.target.reset();
   } catch {
     status.textContent = "That didn't go through. Try again in a minute.";

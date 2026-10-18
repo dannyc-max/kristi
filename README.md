@@ -7,7 +7,6 @@ Static site, no build step. Open `index.html` in a browser.
 - `dye.html`: Dye Notes (supplies, methods, dye log, truffle post). Add a log entry per batch
 - `assets/site.css`: shared styles and brand colors
 - `assets/logo/`: logo in SVG, transparent PNG and cream PNG
-- `print/Ridgeline-Bookmarks-free-pattern.pdf`: free sign-up pattern (source: `print/bookmark-pattern.html`)
 - `print/signup-sheet.html`: clipboard sign-up sheet for the booth
 - `docs/marketing-plan.md`: email rhythm, timely topics, pricing research, Stitch Library plan
 - `docs/welcome-email.md`: welcome email draft
