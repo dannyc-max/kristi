@@ -55,6 +55,8 @@
       </ul>
     </div>
     <form id="signup" novalidate>
+      <input type="hidden" name="_subject" value="New email list sign-up from your website">
+      <input type="hidden" name="_template" value="table">
       <label for="email">YOUR EMAIL</label>
       <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
       <label for="fname">FIRST NAME (optional)</label>
@@ -77,9 +79,10 @@
 
 </div>
 <script>
-// Sign-up form. Not connected to an email service yet: when you pick one
-// (MailerLite, Kit, Buttondown...), paste its form action URL into SIGNUP_URL.
-const SIGNUP_URL = "";
+// Sign-up form. Each sign-up is emailed to Kristi through FormSubmit (formsubmit.co).
+// The very first sign-up triggers a one-time "activate this form" email that must be confirmed.
+// Later, if you move to a real email-list tool (MailerLite, Kit, Buttondown...), swap its URL in here.
+const SIGNUP_URL = "https://formsubmit.co/ajax/kristicoriden@gmail.com";
 document.getElementById("signup").addEventListener("submit", async (e) => {
   e.preventDefault();
   const status = document.getElementById("status");
@@ -94,9 +97,9 @@ document.getElementById("signup").addEventListener("submit", async (e) => {
     return;
   }
   try {
-    const res = await fetch(SIGNUP_URL, { method: "POST", body: new FormData(e.target) });
+    const res = await fetch(SIGNUP_URL, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(e.target) });
     if (!res.ok) throw new Error();
-    status.textContent = "You're on the list. Check your inbox for the free bookmark pattern.";
+    status.textContent = "You're on the list! I'll send the free bookmark pattern to your inbox soon.";
     e.target.reset();
   } catch {
     status.textContent = "That didn't go through. Try again in a minute.";
