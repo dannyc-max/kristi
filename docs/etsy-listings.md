@@ -17,9 +17,9 @@ This cat fabric is gone, so only two sets of 4 exist. Buy both for a set of 8. T
 - Set of 4 (2 sets available)
 - 5.5 × 5.5 inches each
 - Multiple black cats on every piece, finished with a black border that matches the runner and placemats
-- Fabric: [cotton? front and back fabrics]
+- 100% cotton
 - Layers: [batting or interfacing inside, or two layers of fabric?]
-- Care: [machine wash cold, tumble dry low?]
+- Machine wash cold with like colors
 
 Pairs with the cat eye table runner and cat placemats from the same collection. Looking for a simpler, lower-priced set? Send me a message.
 
@@ -27,7 +27,7 @@ Pairs with the cat eye table runner and cat placemats from the same collection. 
 black cat coasters, cat cocktail napkins, fabric coasters, cloth coasters, cat lover gift, halloween coasters, black cat decor, reusable napkins, cocktail napkins, witchy home decor, handmade coasters, spooky bar decor, cat mug rug
 
 **Category:** Home & Living > Kitchen & Dining > Drink & Barware > Coasters
-**Materials:** [cotton fabric, cotton thread, ...]
+**Materials:** cotton fabric, cotton thread
 **Quantity:** 2 (sets of 4; only ones in this fabric, ready to ship)
 **Processing time:** [1–2 business days?]
 **Price:** $25 per set of 4
@@ -45,8 +45,8 @@ Sewn by hand in my studio in western North Carolina.
 
 - 14 × 68 inches
 - Quilted, with a black border that matches the cat placemats and coasters
-- Fabric: [cotton? front and back]
-- Care: [machine wash cold, tumble dry low?]
+- 100% cotton
+- Machine wash cold with like colors
 - [One of a kind in this fabric?]
 
 **Tags**
@@ -56,7 +56,7 @@ black cat runner, cat table runner, halloween runner, quilted runner, table runn
 **Price:** [your price; the marketing plan's range for runners is $45–75 by length, and 68 inches is at the long end]
 
 ## Cat placemats (up to 6)
-[still waiting on fabrics, care, prices and photos]
+[still waiting on prices and photos]
 
 Two listings from the same stock, so people searching for table linens and people shopping for their cat both find them. Split the 6 placemats between the two listings so they can't oversell (for example, a set of 4 here and 2 singles in the cat bowl listing), and move stock between them as they sell.
 
@@ -70,8 +70,8 @@ Black cats on every placemat, framed with the same black border as the matching 
 - Set of [4]
 - 19.5 × 11.5 inches each, room for a dinner plate, glass and silverware
 - Quilted, with a black border that matches the cat eye table runner and coasters
-- Fabric: [cotton? front and back]
-- Care: [machine wash cold, tumble dry low?]
+- 100% cotton
+- Machine wash cold with like colors
 
 Your cat may want one too: single placemats are listed separately as cat bowl mats.
 
@@ -90,7 +90,7 @@ Your cat has opinions about where dinner is served. This one is a proper quilted
 - Single placemat, 19.5 × 11.5 inches
 - Room for a food bowl and a water bowl side by side, with space to catch spills
 - Quilted cotton with a black border, sewn by hand in my studio in western North Carolina
-- Machine washable: [care]
+- 100% cotton, machine wash cold with like colors
 - From the same collection as the cat eye table runner, placemats and coasters, if you'd like to match your own table
 
 **Tags**
