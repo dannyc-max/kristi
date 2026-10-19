@@ -56,13 +56,24 @@ black cat runner, cat table runner, halloween runner, quilted runner, table runn
 **Price:** [your price; the marketing plan's range for runners is $45–75 by length, and 68 inches is at the long end]
 
 ## Cat placemats (up to 6)
-[waiting on size, fabrics, finish, price and photos]
+[still waiting on fabrics, care, prices and photos]
 
 Two listings from the same stock, so people searching for table linens and people shopping for their cat both find them. Split the 6 placemats between the two listings so they can't oversell (for example, a set of 4 here and 2 singles in the cat bowl listing), and move stock between them as they sell.
 
 ### Listing A: table placemats
 **Title**
-Black Cat Placemats, Set of [4], Quilted Fabric Placemats with Black Border, Cat Lover Gift, Halloween Table Decor, Matches Cat Runner
+Black Cat Placemats, Set of [4], 19.5 x 11.5 Inch Quilted Fabric Placemats with Black Border, Cat Lover Gift, Halloween Table Decor, Matches Cat Runner
+
+**Description**
+Black cats on every placemat, framed with the same black border as the matching runner and coasters. Sewn by hand in my studio in western North Carolina.
+
+- Set of [4]
+- 19.5 × 11.5 inches each, room for a dinner plate, glass and silverware
+- Quilted, with a black border that matches the cat eye table runner and coasters
+- Fabric: [cotton? front and back]
+- Care: [machine wash cold, tumble dry low?]
+
+Your cat may want one too: single placemats are listed separately as cat bowl mats.
 
 **Tags**
 black cat placemats, cat placemats, fabric placemats, quilted placemats, cat lover gift, halloween placemats, black cat decor, cat table decor, cloth placemats, witchy kitchen, cat mom gift, spooky table decor, handmade placemats
@@ -71,13 +82,13 @@ black cat placemats, cat placemats, fabric placemats, quilted placemats, cat lov
 
 ### Listing B: cat bowl mat
 **Title**
-Black Cat Food Mat, Quilted Fabric Cat Bowl Placemat, Washable Pet Feeding Mat, Cat Lover Gift, Matches Cat Table Runner
+Black Cat Food Mat, 19.5 x 11.5 Inch Quilted Cat Bowl Placemat, Washable Pet Feeding Mat, Cat Lover Gift, Matches Cat Table Runner
 
 **Description**
 Your cat has opinions about where dinner is served. This one is a proper quilted placemat covered in black cats with a black border, so their bowl gets the same table setting you do.
 
-- Single placemat, [size] inches
-- Fits [one or two] bowls
+- Single placemat, 19.5 × 11.5 inches
+- Room for a food bowl and a water bowl side by side, with space to catch spills
 - Quilted cotton with a black border, sewn by hand in my studio in western North Carolina
 - Machine washable: [care]
 - From the same collection as the cat eye table runner, placemats and coasters, if you'd like to match your own table
