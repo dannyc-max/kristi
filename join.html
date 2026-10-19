@@ -71,7 +71,7 @@
 // Sign-up form. Once SHEET_URL is set, each sign-up is added as a row in Kristi's private
 // Google Sheet (script in docs/signup-sheet-script.gs). Until then, sign-ups are emailed to
 // Kristi through FormSubmit (formsubmit.co), which needs a one-time "activate this form" click.
-const SHEET_URL = "";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbzcYEUgv9BjJzrzcs310cLPrsYQvbPT8xdakNOVOBBoGXWwOXL3-W_Tp5RLqlRQumJs/exec";
 const SIGNUP_URL = "https://formsubmit.co/ajax/kristicoriden@gmail.com";
 document.getElementById("signup").addEventListener("submit", async (e) => {
   e.preventDefault();

@@ -14,6 +14,6 @@ Static site, no build step. Open `index.html` in a browser.
 ## To do before it goes live
 - Photos still needed: runners, placemats, Ace of Cups, Graybeard, and the turned edge, roving and hand-stitch cards
 - Prices are left off the site on purpose until there is online shopping or Etsy listings
-- The Join page sign-up form adds each sign-up to a private Google Sheet once `SHEET_URL` in `join.html` is set (script: `docs/signup-sheet-script.gs`); until then it emails each sign-up via FormSubmit
+- The Join page sign-up form adds each sign-up to Kristi's private Google Sheet ("Website email sign-ups") via `SHEET_URL` in `join.html` (script: `docs/signup-sheet-script.gs`)
 - Swap in real Instagram reel and YouTube links (Tapes from the basement, Stitch Library "Watch" links)
 - Add the 2012 upcycling posts to the journal
