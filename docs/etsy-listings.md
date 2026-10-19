@@ -36,4 +36,33 @@ black cat coasters, cat cocktail napkins, fabric coasters, cloth coasters, cat l
 [waiting on size, fabrics, finish and photos]
 
 ## Cat placemats (up to 6)
-[waiting on size, fabrics, finish and photos]
+[waiting on size, fabrics, finish, price and photos]
+
+Two listings from the same stock, so people searching for table linens and people shopping for their cat both find them. Split the 6 placemats between the two listings so they can't oversell (for example, a set of 4 here and 2 singles in the cat bowl listing), and move stock between them as they sell.
+
+### Listing A: table placemats
+**Title**
+Black Cat Placemats, Set of [4], Quilted Fabric Placemats with Black Border, Cat Lover Gift, Halloween Table Decor, Matches Cat Runner
+
+**Tags**
+black cat placemats, cat placemats, fabric placemats, quilted placemats, cat lover gift, halloween placemats, black cat decor, cat table decor, cloth placemats, witchy kitchen, cat mom gift, spooky table decor, handmade placemats
+
+**Category:** Home & Living > Kitchen & Dining > Dining & Serving > Placemats
+
+### Listing B: cat bowl mat
+**Title**
+Black Cat Food Mat, Quilted Fabric Cat Bowl Placemat, Washable Pet Feeding Mat, Cat Lover Gift, Matches Cat Table Runner
+
+**Description**
+Your cat has opinions about where dinner is served. This one is a proper quilted placemat covered in black cats with a black border, so their bowl gets the same table setting you do.
+
+- Single placemat, [size] inches
+- Fits [one or two] bowls
+- Quilted cotton with a black border, sewn by hand in my studio in western North Carolina
+- Machine washable: [care]
+- From the same collection as the cat eye table runner, placemats and coasters, if you'd like to match your own table
+
+**Tags**
+cat food mat, cat bowl mat, pet placemat, cat feeding mat, black cat gift, cat lover gift, cat mom gift, cat dad gift, cat dish mat, fabric pet mat, washable pet mat, crazy cat lady, pet food mat
+
+**Category:** Pet Supplies > Pet Feeding > Pet Feeding Mats
