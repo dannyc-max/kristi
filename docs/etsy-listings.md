@@ -33,7 +33,27 @@ black cat coasters, cat cocktail napkins, fabric coasters, cloth coasters, cat l
 **Price:** $25 per set of 4
 
 ## Cat eye table runner
-[waiting on size, fabrics, finish and photos]
+**Title**
+Black Cat Table Runner, 14 x 68 Inch Quilted Runner with Black Border, Cat Eye Fabric, Halloween Table Decor, Cat Lover Gift
+
+**Description**
+[One line on the cat eye design: printed cat eyes, black cats, or both?] Quilted and framed with a black border, it's the centerpiece of a cat table set: the matching placemats and coasters have the same border.
+
+At 14 × 68 inches, it drapes about 6 inches off each end of a table around 56 inches (4½ to 5 feet) long, or sits on top of a 6-foot table with room to spare.
+
+Sewn by hand in my studio in western North Carolina.
+
+- 14 × 68 inches
+- Quilted, with a black border that matches the cat placemats and coasters
+- Fabric: [cotton? front and back]
+- Care: [machine wash cold, tumble dry low?]
+- [One of a kind in this fabric?]
+
+**Tags**
+black cat runner, cat table runner, halloween runner, quilted runner, table runner, black cat decor, cat lover gift, cat eye fabric, spooky table decor, witchy home decor, fall table runner, cat mom gift, handmade runner
+
+**Category:** Home & Living > Kitchen & Dining > Dining & Serving > Table Runners
+**Price:** [your price; the marketing plan's range for runners is $45–75 by length, and 68 inches is at the long end]
 
 ## Cat placemats (up to 6)
 [waiting on size, fabrics, finish, price and photos]
