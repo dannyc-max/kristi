@@ -68,9 +68,10 @@
 
 </div>
 <script>
-// Sign-up form. Each sign-up is emailed to Kristi through FormSubmit (formsubmit.co).
-// The very first sign-up triggers a one-time "activate this form" email that must be confirmed.
-// Later, if you move to a real email-list tool (MailerLite, Kit, Buttondown...), swap its URL in here.
+// Sign-up form. Once SHEET_URL is set, each sign-up is added as a row in Kristi's private
+// Google Sheet (script in docs/signup-sheet-script.gs). Until then, sign-ups are emailed to
+// Kristi through FormSubmit (formsubmit.co), which needs a one-time "activate this form" click.
+const SHEET_URL = "";
 const SIGNUP_URL = "https://formsubmit.co/ajax/kristicoriden@gmail.com";
 document.getElementById("signup").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -86,6 +87,13 @@ document.getElementById("signup").addEventListener("submit", async (e) => {
     return;
   }
   try {
+    if (SHEET_URL) {
+      // Google doesn't let the page read the reply, so a sent request counts as success.
+      await fetch(SHEET_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(e.target)) });
+      status.textContent = "You're on the list. Thank you!";
+      e.target.reset();
+      return;
+    }
     const res = await fetch(SIGNUP_URL, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(e.target) });
     if (!res.ok) throw new Error();
     status.textContent = "You're on the list. Thank you!";
