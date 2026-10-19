@@ -15,5 +15,5 @@ Static site, no build step. Open `index.html` in a browser.
 - Photos still needed: runners, placemats, Ace of Cups, Graybeard, and the turned edge, roving and hand-stitch cards
 - Prices are left off the site on purpose until there is online shopping or Etsy listings
 - The Join page sign-up form adds each sign-up to Kristi's private Google Sheet ("Website email sign-ups") via `SHEET_URL` in `join.html` (script: `docs/signup-sheet-script.gs`)
-- Stitch Library "Watch the reel" links are hidden until the real reels are in (look for the HTML comments). The Process page video card links to a search of the YouTube channel; swap in the video's own link
+- Stitch Library "Watch the reel" links are hidden until the real reels are in (look for the HTML comments). Process page video cards can show a screenshot: add <img class="thumb"> as the card's first line
 - Add the 2012 upcycling posts to the journal
