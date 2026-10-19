@@ -12,6 +12,8 @@ Eight little squares of black cat fabric, each framed with a black border. At 5.
 
 Each one is sewn by hand in my studio in western North Carolina, so no two cats land in quite the same spot.
 
+This cat fabric is gone, so this is the only set I can make in it. It's finished and ready to ship. I'm happy to sew a set of 8 in a different fabric; send me a message.
+
 - Set of 8
 - 5.5 × 5.5 inches each
 - Multiple black cats on every piece, finished with a black border
@@ -26,7 +28,8 @@ black cat coasters, cat cocktail napkins, fabric coasters, cloth coasters, cat l
 
 **Category:** Home & Living > Kitchen & Dining > Drink & Barware > Coasters
 **Materials:** [cotton fabric, cotton thread, ...]
-**Quantity:** [1 set, or more if you can make them to order]
+**Quantity:** 1 (only set in this fabric, ready to ship)
+**Processing time:** [1–2 business days?]
 **Price:** [your price]
 
 ## Cat eye table runner
