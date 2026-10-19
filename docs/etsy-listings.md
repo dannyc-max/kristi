@@ -62,7 +62,7 @@ Two listings from the same stock, so people searching for table linens and peopl
 
 ### Listing A: table placemats
 **Title**
-Black Cat Placemats, Set of [4], 19.5 x 11.5 Inch Quilted Fabric Placemats with Black Border, Cat Lover Gift, Halloween Table Decor, Matches Cat Runner
+Black Cat Placemats, Set of [4], 19.5 x 11.5 Inch Quilted Placemats with Black Border, Cat Lover Gift, Halloween Table Decor
 
 **Description**
 Black cats on every placemat, framed with the same black border as the matching runner and coasters. Sewn by hand in my studio in western North Carolina.
