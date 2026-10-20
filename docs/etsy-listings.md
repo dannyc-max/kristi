@@ -30,7 +30,7 @@ black cat coasters, cat cocktail napkins, fabric coasters, cloth coasters, cat l
 **Materials:** cotton fabric, cotton thread
 **Quantity:** 2 (sets of 4; only ones in this fabric, ready to ship)
 **Processing time:** [1–2 business days?]
-**Price:** $25 per set of 4
+**Price:** $25 per set of 4, plus $5 shipping (free on orders of $35+)
 
 ## Cat eye table runner
 **Title**
@@ -53,10 +53,12 @@ Sewn by hand in my studio in western North Carolina.
 black cat runner, cat table runner, halloween runner, quilted runner, table runner, black cat decor, cat lover gift, cat eye fabric, spooky table decor, witchy home decor, fall table runner, cat mom gift, handmade runner
 
 **Category:** Home & Living > Kitchen & Dining > Dining & Serving > Table Runners
-**Price:** [your price; the marketing plan's range for runners is $45–75 by length, and 68 inches is at the long end]
+**Price:** $92 with free shipping (show price $75 + Etsy fees + about $7 shipping)
 
 ## Cat placemats (up to 6)
-[still waiting on prices and photos]
+[still waiting on photos]
+
+Show prices were $20 per placemat. With free shipping and Etsy fees: set of 4 at $98 (keeps about $80), single cat bowl mat at $28 (keeps about $20).
 
 Two listings from the same stock, so people searching for table linens and people shopping for their cat both find them. Split the 6 placemats between the two listings so they can't oversell (for example, a set of 4 here and 2 singles in the cat bowl listing), and move stock between them as they sell.
 
