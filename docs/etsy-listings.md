@@ -30,7 +30,7 @@ black cat coasters, cat cocktail napkins, fabric coasters, cloth coasters, cat l
 **Materials:** cotton fabric, cotton thread
 **Quantity:** 2 (sets of 4; only ones in this fabric, ready to ship)
 **Processing time:** [1–2 business days?]
-**Price:** $25 per set of 4, plus $5 shipping (free on orders of $35+)
+**Price:** $38 per set of 4 with free shipping (show price $30 + Etsy fees + about $4.50 shipping)
 
 ## Cat eye table runner
 **Title**
