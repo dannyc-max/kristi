@@ -262,3 +262,4 @@ main > section:first-child:not(.hero){padding-top:clamp(28px,5vw,48px)}
 textarea{font:inherit;font-size:17px;padding:12px 14px;border:2px solid var(--on-tile);background:var(--cream);color:var(--ink);width:100%;resize:vertical;min-height:130px}
 textarea:focus-visible{outline:3px dashed var(--sienna);outline-offset:3px}
 .booth .fine{color:var(--muted);opacity:1}
+.occasions{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
