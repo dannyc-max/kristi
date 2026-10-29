@@ -263,3 +263,4 @@ textarea{font:inherit;font-size:17px;padding:12px 14px;border:2px solid var(--on
 textarea:focus-visible{outline:3px dashed var(--sienna);outline-offset:3px}
 .booth .fine{color:var(--muted);opacity:1}
 .occasions{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+#rates .tagrow{grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr))}
