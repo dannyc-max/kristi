@@ -3,7 +3,7 @@
 Static site, no build step. Open `index.html` in a browser.
 
 - `index.html`: home (art, process, Stitch Library teaser, shop, journal, fairs, newsletter sign-up)
-- `commissions.html`: custom work, how commissions are priced, and an inquiry form that emails Kristi
+- `commissions.html`: custom work, how commissions are priced, and an inquiry form that emails Kristi right away (FormSubmit); its newsletter box adds the sender to the sign-up Google Sheet
 - `techniques.html`: Stitch Library, one card per technique from the landscape pattern
 - `dye.html`: Dye Notes (supplies, methods, dye log, truffle post). Add a log entry per batch
 - `assets/site.css`: shared styles and brand colors

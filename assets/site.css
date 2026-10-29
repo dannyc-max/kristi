@@ -264,3 +264,5 @@ textarea:focus-visible{outline:3px dashed var(--sienna);outline-offset:3px}
 .booth .fine{color:var(--muted);opacity:1}
 .occasions{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
 #rates .tagrow{grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr))}
+label.check{display:flex;align-items:center;gap:10px;font-size:15px;cursor:pointer}
+label.check input{width:22px;min-height:22px;height:22px;flex:none;margin:0;padding:0;accent-color:var(--ink)}

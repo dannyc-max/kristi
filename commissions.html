@@ -95,6 +95,7 @@
       <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
       <label for="idea">WHAT WOULD YOU LIKE MADE?</label>
       <textarea id="idea" name="idea" rows="5" required></textarea>
+      <label class="check"><input id="news" name="newsletter" type="checkbox" value="yes"> Also add me to the newsletter</label>
       <button class="btn" type="submit">Send inquiry</button>
       <p class="status" id="status" role="status"></p>
     </form>
@@ -113,8 +114,10 @@
 
 </div>
 <script>
-// Commission inquiries are emailed to Kristi through FormSubmit, like the newsletter form.
+// Each inquiry is emailed to Kristi right away through FormSubmit (reply goes straight to the sender).
+// Ticking the newsletter box also adds the email to her sign-up Google Sheet, same as join.html.
 const INQUIRY_URL = "https://formsubmit.co/ajax/kristicoriden@gmail.com";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbzcYEUgv9BjJzrzcs310cLPrsYQvbPT8xdakNOVOBBoGXWwOXL3-W_Tp5RLqlRQumJs/exec";
 document.getElementById("inquiry").addEventListener("submit", async (e) => {
   e.preventDefault();
   const status = document.getElementById("status");
@@ -128,6 +131,11 @@ document.getElementById("inquiry").addEventListener("submit", async (e) => {
   try {
     const res = await fetch(INQUIRY_URL, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(form) });
     if (!res.ok) throw new Error();
+    if (document.getElementById("news").checked) {
+      const sub = new URLSearchParams({ email: form.email.value.trim(), fname: form.name.value.trim().split(/\s+/)[0] });
+      // Google doesn't let the page read the reply, so a sent request counts as success.
+      await fetch(SHEET_URL, { method: "POST", mode: "no-cors", body: sub }).catch(() => {});
+    }
     status.textContent = "Sent. I'll be in touch soon. Thank you!";
     form.reset();
   } catch {
