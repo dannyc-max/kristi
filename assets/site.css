@@ -257,3 +257,8 @@ main > section:first-child:not(.hero){padding-top:clamp(28px,5vw,48px)}
 .hero{padding-top:clamp(4px,1.5vw,16px)}
 .ph.fit{background:var(--scrap)}
 .ph.fit img{object-fit:contain}
+
+/* ---------- commissions ---------- */
+textarea{font:inherit;font-size:17px;padding:12px 14px;border:2px solid var(--on-tile);background:var(--cream);color:var(--ink);width:100%;resize:vertical;min-height:130px}
+textarea:focus-visible{outline:3px dashed var(--sienna);outline-offset:3px}
+.booth .fine{color:var(--muted);opacity:1}

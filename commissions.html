@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Commissions</title>
+<meta name="description" content="Custom work made to order: quilts, garments, sewing and pattern work. Fabric cost as deposit, two consultations and up to two fittings included.">
+<link rel="icon" href="assets/logo/The_Art_is_Coming_from_Inside_the_House_logo_transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,600;1,9..144,800&family=Special+Elite&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <nav aria-label="Main">
+    <a class="mark" href="index.html">INSIDE <i>the</i> HOUSE</a>
+    <ul>
+      <li><a href="index.html">Art</a></li>
+      <li><a href="process.html">Process</a></li>
+      <li><a href="dye.html">Dye Notes</a></li>
+      <li><a href="techniques.html">Stitch Library</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="commissions.html" aria-current="page">Commissions</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a class="join" href="join.html">Newsletter</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap" id="top">
+
+  <!-- COMMISSIONS -->
+  <section id="commissions" aria-labelledby="com-h">
+    <div class="head">
+      <p class="typed">Made to order · any custom work</p>
+      <h2 id="com-h"><span class="t s">Custom</span> <span class="sm">work,</span> <span class="t b">commissioned</span></h2>
+      <p>If it’s made of cloth, ask. Art quilts, garments, pattern drafting, alterations, home linens and one-off sewing projects, made in the house.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Consult</h3><p>We talk through the idea, sizes, fabric and timeline. Two consultations are included.</p></li>
+      <li><h3>Deposit</h3><p>The deposit is the cost of the fabric and materials, paid before anything is cut.</p></li>
+      <li><h3>Make</h3><p>Pattern construction and sewing are billed by the hour. You get an estimate up front.</p></li>
+      <li><h3>Fit</h3><p>Up to two fittings are included for anything that’s worn.</p></li>
+    </ol>
+  </section>
+
+  <section id="rates" aria-labelledby="rates-h">
+    <div class="head">
+      <p class="typed">Rates</p>
+      <h2 id="rates-h"><span class="t g">How</span> <span class="sm">it’s</span> <span class="t o">priced</span></h2>
+    </div>
+    <div class="booth">
+      <h3>WHAT A COMMISSION COSTS</h3>
+      <div class="tagrow">
+        <!-- Hourly rates: fill in before the site goes live -->
+        <div><b>Pattern construction</b><span>$__ / hr</span></div>
+        <div><b>Sewing and construction</b><span>$__ / hr</span></div>
+        <div><b>Deposit</b><span>Cost of fabric</span></div>
+        <div><b>Consultations</b><span>2 included</span></div>
+        <div><b>Fittings</b><span>Up to 2 included</span></div>
+      </div>
+      <p class="fine">The deposit is applied to your final bill. Extra consultations or fittings are billed at the hourly rate.</p>
+    </div>
+  </section>
+
+  <section id="ask" class="join-box" aria-labelledby="ask-h">
+    <div class="join-copy">
+      <p class="typed">Start a commission</p>
+      <h2 id="ask-h">Tell me what you’d like made</h2>
+      <p>Describe the piece, rough size, and when you need it. Photos of inspiration help. I’ll reply to set up the first consultation.</p>
+    </div>
+    <form id="inquiry" novalidate>
+      <input type="hidden" name="_subject" value="New commission inquiry from your website">
+      <input type="hidden" name="_template" value="table">
+      <label for="name">YOUR NAME</label>
+      <input id="name" name="name" type="text" autocomplete="name" required>
+      <label for="email">YOUR EMAIL</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <label for="idea">WHAT WOULD YOU LIKE MADE?</label>
+      <textarea id="idea" name="idea" rows="5" required></textarea>
+      <button class="btn" type="submit">Send inquiry</button>
+      <p class="status" id="status" role="status"></p>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 The Art is Coming from Inside the House</span>
+  <ul>
+    <li><a href="https://www.instagram.com/artiscomingfrominsidethehouse/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://www.etsy.com/shop/ArtHouseArtQuilts" target="_blank" rel="noopener">Etsy</a></li>
+    <li><a href="https://www.youtube.com/@krscrdnart" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
+</footer>
+
+</div>
+<script>
+// Commission inquiries are emailed to Kristi through FormSubmit, like the newsletter form.
+const INQUIRY_URL = "https://formsubmit.co/ajax/kristicoriden@gmail.com";
+document.getElementById("inquiry").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const status = document.getElementById("status");
+  const form = e.target;
+  const missing = [...form.querySelectorAll("[required]")].find((f) => !f.value.trim() || !f.checkValidity());
+  if (missing) {
+    status.textContent = missing.type === "email" ? "That email doesn't look right. Check for a typo and try again." : "Fill in every field, then send.";
+    missing.focus();
+    return;
+  }
+  try {
+    const res = await fetch(INQUIRY_URL, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(form) });
+    if (!res.ok) throw new Error();
+    status.textContent = "Sent. I'll be in touch soon. Thank you!";
+    form.reset();
+  } catch {
+    status.textContent = "That didn't go through. Try again in a minute.";
+  }
+});
+</script>
+</body>
+</html>
