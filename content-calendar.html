@@ -49,6 +49,16 @@ h1 i{font-family:var(--f-serif);font-weight:800;color:var(--sienna)}
 .note{font-size:13px;color:var(--muted)}
 #status{min-height:1.4em}
 
+/* weekly goals */
+.goals{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-size:14px}
+.goals .wk{font-family:var(--f-type);font-size:13px;color:var(--muted);letter-spacing:.04em}
+.goal{display:inline-flex;align-items:center;gap:8px}
+.goal b{font-family:var(--f-display);font-weight:900;font-variant-numeric:tabular-nums}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:12px;height:12px;border-radius:3px;border:2px solid var(--c);display:inline-block}
+.dots i.on{background:var(--c)}
+.goal.met b{color:var(--meadow)}
+
 /* grid */
 .cal{background:var(--scrap);box-shadow:5px 7px 0 var(--shadow);outline:2px dashed var(--line);outline-offset:-8px;padding:14px}
 .dow,.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
@@ -126,6 +136,7 @@ textarea{min-height:90px;resize:vertical}
   <div style="display:flex;flex-direction:column;gap:6px">
     <div class="legend" id="legend" aria-label="Show or hide channels"></div>
     <p class="note" id="status" role="status">Loading the calendar…</p>
+    <div class="goals" id="goals" aria-label="This week's goals"></div>
   </div>
 
   <section class="cal" aria-label="Month grid">
@@ -162,7 +173,7 @@ textarea{min-height:90px;resize:vertical}
 
 <script>
 const CHANNELS = {
-  instagram:{label:"Instagram Reel", c:"--blue"},
+  instagram:{label:"Instagram", c:"--blue"},
   journal:{label:"Journal / website", c:"--meadow"},
   etsy:{label:"Etsy", c:"--olive"},
   youtube:{label:"YouTube", c:"--plum"},
@@ -227,6 +238,22 @@ function render(){
       ${p.notes?`<div class="n">${esc(p.notes)}</div>`:""}
     </div>`;}).join("")
     : `<div class="empty">Nothing planned for ${MONTHS[m]} yet. Tap a day or choose Add post.</div>`;
+  renderGoals();
+}
+
+// weekly goals: Monday to Sunday, counts posts marked Posted
+const GOALS = [["youtube",1],["instagram",1],["etsy",2]];
+function renderGoals(){
+  const t = new Date(); const mon = new Date(t.getFullYear(), t.getMonth(), t.getDate() - ((t.getDay()+6)%7));
+  const sun = new Date(mon); sun.setDate(mon.getDate()+6);
+  const a = iso(mon), b = iso(sun);
+  const wk = posts.filter(p => p.date >= a && p.date <= b);
+  const fmt = d => MONTHS[d.getMonth()].slice(0,3)+" "+d.getDate();
+  $("goals").innerHTML = `<span class="wk">This week, ${fmt(mon)} to ${fmt(sun)}</span>` + GOALS.map(([ch,n]) => {
+    const done = wk.filter(p => p.channel===ch && p.status==="posted").length;
+    const dots = Array.from({length:Math.max(n,done)},(_,i)=>`<i class="${i<done?"on":""}"></i>`).join("");
+    return `<span class="goal${done>=n?" met":""}" style="--c:var(${CHANNELS[ch].c})"><span class="dots">${dots}</span>${CHANNELS[ch].label} <b>${done}/${n}</b></span>`;
+  }).join("");
 }
 
 // navigation
