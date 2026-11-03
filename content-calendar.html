@@ -143,14 +143,14 @@ textarea{min-height:90px;resize:vertical}
   <form class="sheet" id="form" method="dialog">
     <h2 id="dlgTitle">New post</h2>
     <div class="fields">
-      <label class="full">Title<input id="f-title" required maxlength="140" placeholder="Set the table: runners for Thanksgiving"></label>
+      <label class="full">Title<input id="f-title" required maxlength="140" placeholder="Reel: cloth goes in white, comes out blue"></label>
       <label>Date<input id="f-date" type="date" required></label>
       <label>Channel<select id="f-channel"></select></label>
       <label>Series<select id="f-series"></select></label>
       <label>Status<select id="f-status">
         <option value="idea">Idea</option><option value="drafting">Drafting</option>
         <option value="scheduled">Scheduled</option><option value="posted">Posted</option></select></label>
-      <label class="full">Notes<textarea id="f-notes" maxlength="2000" placeholder="One story, one thing to buy, one place to find you"></textarea></label>
+      <label class="full">Notes<textarea id="f-notes" maxlength="2000" placeholder="What to film, what to link, what to say"></textarea></label>
     </div>
     <div class="actions">
       <button type="button" class="btn del" id="delBtn" hidden>Delete</button>
@@ -162,7 +162,6 @@ textarea{min-height:90px;resize:vertical}
 
 <script>
 const CHANNELS = {
-  newsletter:{label:"Newsletter", c:"--sienna"},
   instagram:{label:"Instagram Reel", c:"--blue"},
   journal:{label:"Journal / website", c:"--meadow"},
   etsy:{label:"Etsy", c:"--olive"},
