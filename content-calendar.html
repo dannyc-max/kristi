@@ -1,0 +1,315 @@
+<title>Inside the House Content Calendar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,600;1,9..144,800&family=Special+Elite&display=swap">
+<style>
+/* Layout: a pinned-up studio wall calendar. Month grid on cream "scrap" paper, channels as fabric-colored chips,
+   with a typed agenda list underneath for the month (and as the main view on a phone). */
+:root{
+  --cream:#F1EBDF; --scrap:#FAF6EE; --ink:#4A2436; --muted:#6E5A62;
+  --sienna:#A14B34; --blue:#1B3F8D; --meadow:#6E8B67; --olive:#5A5C2E; --plum:#7A3E6C; --grey:#5F6F82;
+  --on-tile:#F1EBDF; --line:#4A243633; --shadow:#4A24361f; --today:#A14B3418;
+  --f-display:"Archivo","Arial Black",system-ui,sans-serif;
+  --f-body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --f-type:"Special Elite","Courier New",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --cream:#1E1619;--scrap:#2A2024;--ink:#F1EBDF;--muted:#C2B3B8;
+  --sienna:#D2724F;--blue:#7E9DE0;--meadow:#94B08C;--olive:#A7AA6A;--plum:#C98AB8;--grey:#A9B7C6;
+  --on-tile:#1E1619;--line:#F1EBDF2e;--shadow:#00000066;--today:#D2724F22;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --cream:#1E1619;--scrap:#2A2024;--ink:#F1EBDF;--muted:#C2B3B8;
+  --sienna:#D2724F;--blue:#7E9DE0;--meadow:#94B08C;--olive:#A7AA6A;--plum:#C98AB8;--grey:#A9B7C6;
+  --on-tile:#1E1619;--line:#F1EBDF2e;--shadow:#00000066;--today:#D2724F22;color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+.wrap{max-width:1180px;margin-inline:auto;display:flex;flex-direction:column;gap:22px}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px dashed var(--sienna);outline-offset:2px}
+.typed{font-family:var(--f-type);font-size:13px;letter-spacing:.06em;color:var(--muted)}
+h1,h2{margin:0;text-wrap:balance;line-height:1.05}
+
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between;border-bottom:2px dashed var(--line);padding-bottom:16px}
+h1{font-family:var(--f-display);font-weight:900;font-size:clamp(28px,5vw,44px);letter-spacing:-.01em}
+h1 i{font-family:var(--f-serif);font-weight:800;color:var(--sienna)}
+.monthbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.monthbar h2{font-family:var(--f-serif);font-style:italic;font-weight:800;font-size:clamp(24px,3.4vw,32px);min-width:8.5ch}
+.btn{border:2px solid var(--ink);background:var(--scrap);border-radius:3px;padding:6px 12px;cursor:pointer;font-family:var(--f-type);font-size:14px}
+.btn:hover{background:var(--ink);color:var(--cream)}
+.btn.primary{background:var(--sienna);border-color:var(--sienna);color:var(--on-tile)}
+.btn.primary:hover{filter:brightness(1.08);color:var(--on-tile);background:var(--sienna)}
+.btn.icon{width:36px;padding:6px 0;font-family:var(--f-display);font-weight:900}
+
+.legend{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--c);border-radius:99px;padding:3px 10px;font-size:13px;cursor:pointer;background:transparent}
+.chip::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--c)}
+.chip[aria-pressed="false"]{opacity:.42;text-decoration:line-through}
+.note{font-size:13px;color:var(--muted)}
+#status{min-height:1.4em}
+
+/* grid */
+.cal{background:var(--scrap);box-shadow:5px 7px 0 var(--shadow);outline:2px dashed var(--line);outline-offset:-8px;padding:14px}
+.dow,.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.dow div{font-family:var(--f-type);font-size:12px;color:var(--muted);padding:0 6px 6px;letter-spacing:.06em}
+.grid{border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.day{border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:112px;padding:5px;display:flex;flex-direction:column;gap:3px;min-width:0;cursor:pointer;background:transparent;text-align:left;border-top:0;border-left:0}
+.day:hover{background:var(--today)}
+.day.out{opacity:.4}
+.day.today{background:var(--today)}
+.num{font-family:var(--f-display);font-weight:700;font-size:13px;font-variant-numeric:tabular-nums;display:flex;justify-content:space-between}
+.today .num span:first-child{background:var(--sienna);color:var(--on-tile);border-radius:3px;padding:0 5px}
+.post{display:block;width:100%;border:0;border-left:4px solid var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);border-radius:2px;padding:2px 5px;font-size:12px;line-height:1.3;text-align:left;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.post:hover{background:color-mix(in srgb,var(--c) 26%,transparent)}
+.post.st-posted{opacity:.6;text-decoration:line-through}
+.post.st-idea{border-left-style:dashed}
+
+/* agenda */
+.agenda{display:flex;flex-direction:column;gap:0}
+.agenda h3{font-family:var(--f-display);font-weight:900;font-size:18px;margin:0 0 8px}
+.row{display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:4px 14px;padding:10px 4px;border-top:1px dashed var(--line);align-items:start;cursor:pointer}
+.row:hover{background:var(--today)}
+.row .d{font-family:var(--f-type);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.row .t{font-weight:700;min-width:0}
+.row .n{grid-column:2/4;font-size:13px;color:var(--muted);min-width:0}
+.row .meta{font-size:12px;color:var(--c);font-weight:700;font-family:var(--f-type)}
+.pill{font-family:var(--f-type);font-size:11px;letter-spacing:.05em;border:1.5px solid var(--muted);border-radius:99px;padding:1px 8px;white-space:nowrap;color:var(--muted)}
+.pill.posted{border-color:var(--meadow);color:var(--meadow)}
+.pill.scheduled{border-color:var(--blue);color:var(--blue)}
+.pill.drafting{border-color:var(--sienna);color:var(--sienna)}
+.empty{padding:18px 4px;border-top:1px dashed var(--line);color:var(--muted)}
+
+/* editor */
+dialog{border:0;padding:0;background:transparent;max-width:min(520px,calc(100vw - 32px));width:100%}
+dialog::backdrop{background:#1E161999}
+.sheet{background:var(--scrap);color:var(--ink);padding:20px;box-shadow:5px 7px 0 var(--shadow);outline:2px dashed var(--line);outline-offset:-8px;display:flex;flex-direction:column;gap:12px}
+.sheet h2{font-family:var(--f-serif);font-style:italic;font-weight:800;font-size:24px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fields .full{grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:3px;font-family:var(--f-type);font-size:12px;color:var(--muted);letter-spacing:.04em}
+input,select,textarea{background:var(--cream);border:1.5px solid var(--line);border-radius:3px;padding:7px 9px;font-family:var(--f-body);font-size:15px;color:var(--ink);width:100%}
+textarea{min-height:90px;resize:vertical}
+.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.actions .del{margin-right:auto;border-color:var(--sienna);color:var(--sienna)}
+.actions .del:hover{background:var(--sienna);color:var(--on-tile)}
+
+@media (max-width:720px){
+  .day{min-height:54px;padding:3px}
+  .post{font-size:0;height:6px;padding:0;border-left-width:0;background:var(--c);border-radius:3px}
+  .post:hover{background:var(--c)}
+  .cal{padding:8px}
+  .dow div{padding-inline:2px;text-align:center}
+  .fields{grid-template-columns:1fr}
+  .row{grid-template-columns:64px minmax(0,1fr)}
+  .row .pill{grid-column:2;justify-self:start}
+  .row .n{grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <p class="typed">The Art is Coming from Inside the House</p>
+      <h1>Content <i>calendar</i></h1>
+    </div>
+    <div class="monthbar">
+      <button class="btn icon" id="prev" aria-label="Previous month">‹</button>
+      <h2 id="monthLabel">November 2026</h2>
+      <button class="btn icon" id="next" aria-label="Next month">›</button>
+      <button class="btn" id="todayBtn">Today</button>
+      <button class="btn primary" id="addBtn">Add post</button>
+    </div>
+  </header>
+
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <div class="legend" id="legend" aria-label="Show or hide channels"></div>
+    <p class="note" id="status" role="status">Loading the calendar…</p>
+  </div>
+
+  <section class="cal" aria-label="Month grid">
+    <div class="dow"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="agenda" aria-labelledby="agendaH">
+    <h3 id="agendaH">This month</h3>
+    <div id="agenda"></div>
+  </section>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <form class="sheet" id="form" method="dialog">
+    <h2 id="dlgTitle">New post</h2>
+    <div class="fields">
+      <label class="full">Title<input id="f-title" required maxlength="140" placeholder="Set the table: runners for Thanksgiving"></label>
+      <label>Date<input id="f-date" type="date" required></label>
+      <label>Channel<select id="f-channel"></select></label>
+      <label>Series<select id="f-series"></select></label>
+      <label>Status<select id="f-status">
+        <option value="idea">Idea</option><option value="drafting">Drafting</option>
+        <option value="scheduled">Scheduled</option><option value="posted">Posted</option></select></label>
+      <label class="full">Notes<textarea id="f-notes" maxlength="2000" placeholder="One story, one thing to buy, one place to find you"></textarea></label>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn del" id="delBtn" hidden>Delete</button>
+      <button type="button" class="btn" id="cancelBtn">Cancel</button>
+      <button type="submit" class="btn primary" id="saveBtn">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+const CHANNELS = {
+  newsletter:{label:"Newsletter", c:"--sienna"},
+  instagram:{label:"Instagram Reel", c:"--blue"},
+  journal:{label:"Journal / website", c:"--meadow"},
+  etsy:{label:"Etsy", c:"--olive"},
+  youtube:{label:"YouTube", c:"--plum"},
+  event:{label:"Fair or key date", c:"--grey"},
+};
+const SERIES = ["", "Dye Day", "Ridge by Ridge", "Stitch Library", "Soft materials, loud opinions", "From the vault", "Tapes from the basement", "Set the table", "Handmade gifts"];
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const $ = id => document.getElementById(id);
+const pad = n => String(n).padStart(2,"0");
+const iso = d => d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const esc = s => String(s ?? "").replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+
+let posts = [];            // [{id, ...data}]
+let view = new Date(); view.setDate(1);
+let hidden = new Set();
+let db = null, canWrite = true, editingId = null;
+try { const v = JSON.parse(localStorage.getItem("cc-hidden")||"[]"); hidden = new Set(v); } catch(e){}
+
+function setStatus(t){ $("status").textContent = t; }
+
+function renderLegend(){
+  $("legend").innerHTML = Object.entries(CHANNELS).map(([k,v]) =>
+    `<button class="chip" style="--c:var(${v.c})" data-ch="${k}" aria-pressed="${!hidden.has(k)}">${v.label}</button>`).join("");
+}
+$("legend").addEventListener("click", e => {
+  const b = e.target.closest("[data-ch]"); if(!b) return;
+  const k = b.dataset.ch; hidden.has(k) ? hidden.delete(k) : hidden.add(k);
+  try { localStorage.setItem("cc-hidden", JSON.stringify([...hidden])); } catch(e){}
+  renderLegend(); render();
+});
+
+function visible(){ return posts.filter(p => !hidden.has(p.channel)).sort((a,b)=> (a.date+a.channel).localeCompare(b.date+b.channel)); }
+
+function render(){
+  const y = view.getFullYear(), m = view.getMonth();
+  $("monthLabel").textContent = MONTHS[m]+" "+y;
+  const start = new Date(y, m, 1 - new Date(y,m,1).getDay());
+  const todayIso = iso(new Date());
+  const byDate = {};
+  visible().forEach(p => (byDate[p.date] ||= []).push(p));
+  let html = "";
+  for(let i=0;i<42;i++){
+    const d = new Date(start); d.setDate(start.getDate()+i);
+    if(i===35 && d.getMonth()!==m) break;
+    const k = iso(d), list = byDate[k]||[];
+    html += `<div class="day${d.getMonth()!==m?" out":""}${k===todayIso?" today":""}" data-date="${k}" role="button" tabindex="0" aria-label="${MONTHS[d.getMonth()]} ${d.getDate()}, ${list.length} posts">
+      <div class="num"><span>${d.getDate()}</span></div>
+      ${list.map(p=>`<button class="post st-${p.status||"idea"}" style="--c:var(${(CHANNELS[p.channel]||CHANNELS.event).c})" data-id="${esc(p.id)}" title="${esc(p.title)}">${esc(p.title)}</button>`).join("")}
+    </div>`;
+  }
+  $("grid").innerHTML = html;
+
+  const prefix = y+"-"+pad(m+1);
+  const month = visible().filter(p => p.date.startsWith(prefix));
+  $("agendaH").textContent = month.length ? `${MONTHS[m]}: ${month.length} planned` : MONTHS[m];
+  $("agenda").innerHTML = month.length ? month.map(p => {
+    const d = new Date(p.date+"T12:00"), ch = CHANNELS[p.channel]||CHANNELS.event;
+    return `<div class="row" data-id="${esc(p.id)}" role="button" tabindex="0" style="--c:var(${ch.c})">
+      <div class="d">${["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()]} ${MONTHS[m].slice(0,3)} ${d.getDate()}</div>
+      <div class="t">${esc(p.title)}<div class="meta">${ch.label}${p.series?" · "+esc(p.series):""}</div></div>
+      <span class="pill ${esc(p.status||"idea")}">${esc(p.status||"idea")}</span>
+      ${p.notes?`<div class="n">${esc(p.notes)}</div>`:""}
+    </div>`;}).join("")
+    : `<div class="empty">Nothing planned for ${MONTHS[m]} yet. Tap a day or choose Add post.</div>`;
+}
+
+// navigation
+$("prev").onclick = () => { view.setMonth(view.getMonth()-1); render(); };
+$("next").onclick = () => { view.setMonth(view.getMonth()+1); render(); };
+$("todayBtn").onclick = () => { view = new Date(); view.setDate(1); render(); };
+$("addBtn").onclick = () => openEditor(null, iso(new Date()));
+
+function onPick(e){
+  const p = e.target.closest("[data-id]");
+  if(p){ e.stopPropagation(); openEditor(p.dataset.id); return; }
+  const d = e.target.closest("[data-date]");
+  if(d) openEditor(null, d.dataset.date);
+}
+$("grid").addEventListener("click", onPick);
+$("agenda").addEventListener("click", onPick);
+[$("grid"),$("agenda")].forEach(el => el.addEventListener("keydown", e => {
+  if((e.key==="Enter"||e.key===" ") && e.target.matches("[role=button]")){ e.preventDefault(); onPick(e); }
+}));
+
+// editor
+$("f-channel").innerHTML = Object.entries(CHANNELS).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join("");
+$("f-series").innerHTML = SERIES.map(s=>`<option value="${esc(s)}">${s||"None"}</option>`).join("");
+
+function openEditor(id, date){
+  editingId = id;
+  const p = id ? posts.find(x=>x.id===id) : null;
+  $("dlgTitle").textContent = p ? "Edit post" : "New post";
+  $("f-title").value = p?.title || "";
+  $("f-date").value = p?.date || date;
+  $("f-channel").value = p?.channel || "instagram";
+  $("f-series").value = p?.series || "";
+  $("f-status").value = p?.status || "idea";
+  $("f-notes").value = p?.notes || "";
+  $("delBtn").hidden = !p || !canWrite;
+  $("delBtn").textContent = "Delete";
+  [...$("form").elements].forEach(el => { if(el.id && el.id.startsWith("f-")) el.disabled = !canWrite; });
+  $("saveBtn").hidden = !canWrite;
+  $("dlg").showModal();
+}
+$("cancelBtn").onclick = () => $("dlg").close();
+$("delBtn").onclick = async () => {
+  const b = $("delBtn");
+  if(b.textContent === "Delete"){ b.textContent = "Tap again to delete"; return; }
+  const id = editingId; $("dlg").close();
+  if(!db) return;
+  try { await db.collection("posts").doc(id).delete(); setStatus("Deleted."); }
+  catch(e){ setStatus("Couldn't delete that post. Try again in a moment."); }
+};
+$("form").addEventListener("submit", async e => {
+  e.preventDefault();
+  if(!db){ setStatus("Saving isn't available in this view."); return; }
+  const data = { title:$("f-title").value.trim(), date:$("f-date").value, channel:$("f-channel").value,
+    series:$("f-series").value, status:$("f-status").value, notes:$("f-notes").value.trim() };
+  if(!data.title || !data.date) return;
+  $("dlg").close();
+  const [y,m] = data.date.split("-").map(Number);
+  view = new Date(y, m-1, 1);
+  try {
+    const col = db.collection("posts");
+    await (editingId ? col.doc(editingId).set(data) : col.add(data));
+    setStatus("Saved.");
+  } catch(err){
+    if(err && err.code === "invalid_argument"){ canWrite = false; setStatus("You can view this calendar but not change it."); }
+    else setStatus("Couldn't save. Check your connection and try again.");
+  }
+  render();
+});
+
+// data
+renderLegend(); render();
+(async () => {
+  const timer = setTimeout(() => setStatus("Can't reach the saved calendar yet. Posts will appear when it connects."), 10000);
+  db = await claude.use("db");
+  const user = await claude.use("user");
+  if(user){ try { const c = await user.can("data.write"); if(c === false) canWrite = false; } catch(e){} }
+  if(!canWrite){ $("addBtn").hidden = true; }
+  if(!db){ clearTimeout(timer); setStatus("Sign in to claude.ai to see and edit the saved calendar."); return; }
+  db.collection("posts").onSnapshot(snap => {
+    posts = snap.docs.map(d => ({id:d.id, ...d.data()})).filter(p => typeof p.date === "string");
+    if(!snap.metadata.fromCache){ clearTimeout(timer); setStatus(posts.length ? (canWrite ? "Tap a day to add a post, or a post to edit it." : "View only.") : "No posts yet. Tap a day to add the first one."); }
+    render();
+  }, err => { clearTimeout(timer); setStatus("The calendar stopped syncing. Reload the page to reconnect."); });
+})();
+</script>
