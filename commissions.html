@@ -118,6 +118,10 @@
 // Ticking the newsletter box also adds the email to her sign-up Google Sheet, same as join.html.
 const INQUIRY_URL = "https://formsubmit.co/ajax/kristicoriden@gmail.com";
 const SHEET_URL = "https://script.google.com/macros/s/AKfycbzcYEUgv9BjJzrzcs310cLPrsYQvbPT8xdakNOVOBBoGXWwOXL3-W_Tp5RLqlRQumJs/exec";
+
+// Designs picked on the (unlisted) embroidery page arrive as ?designs=E0001,E0042
+const picked = (new URLSearchParams(location.search).get("designs") || "").split(",").filter(r => /^E\d{4}$/.test(r));
+if (picked.length) document.getElementById("idea").value = "Embroidery designs I picked: " + picked.join(", ") + "\n\n";
 document.getElementById("inquiry").addEventListener("submit", async (e) => {
   e.preventDefault();
   const status = document.getElementById("status");
