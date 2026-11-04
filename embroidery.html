@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- Hidden page: shared with clients by link only. Not in the nav, sitemap or search engines. -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Embroidery Designs</title>
+<link rel="icon" href="assets/logo/The_Art_is_Coming_from_Inside_the_House_logo_transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Fraunces:ital,opsz,wght@1,9..144,600;1,9..144,800&family=Special+Elite&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.eb{gap:28px}
+.eb-bar{position:sticky;top:0;z-index:5;background:var(--cream);padding:12px 0;border-bottom:2px dashed var(--line);
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.eb-bar input[type=search],.eb-bar select{font:inherit;font-size:15px;min-height:44px;padding:0 12px;border:2px solid var(--line);border-radius:8px;
+  background:var(--scrap);color:var(--ink);min-width:0}
+.eb-bar input[type=search]{flex:1 1 240px}
+.eb-bar .chk{display:flex;gap:6px;align-items:center;white-space:nowrap}
+.eb-bar .chk input{width:18px;height:18px;accent-color:var(--sienna)}
+.eb-bar select{flex:0 1 auto}
+#count{font-family:var(--f-type);font-size:14px;color:var(--muted);white-space:nowrap}
+.eb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+.d{background:var(--scrap);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;
+  box-shadow:0 1px 0 var(--shadow)}
+.d.on{outline:3px solid var(--sienna);outline-offset:-1px}
+.d .pic{all:unset;cursor:zoom-in;background:#F7F4EF;height:180px;display:flex;align-items:center;justify-content:center;padding:10px}
+.d .pic:focus-visible{outline:3px dashed var(--sienna);outline-offset:-3px}
+.d .pic img{max-width:100%;max-height:100%;object-fit:contain}
+.d .m{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.d .ref{font-family:var(--f-type);font-size:13px;color:var(--sienna)}
+.d .nm{font-weight:700;font-size:15px;line-height:1.25;word-break:break-word}
+.d .st{font-size:13px;color:var(--muted)}
+.d .sz{font-size:13px;color:var(--muted);margin-top:2px}
+.d .pick{margin-top:auto;padding-top:8px}
+.d .pick button{font:inherit;font-size:14px;font-weight:700;width:100%;min-height:40px;border-radius:8px;cursor:pointer;
+  background:transparent;color:var(--ink);border:2px dashed var(--line)}
+.d.on .pick button{background:var(--sienna);border:2px solid var(--sienna);color:var(--on-tile)}
+.empty{padding:48px 0;text-align:center;color:var(--muted)}
+.more{display:flex;justify-content:center}
+.tray{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:10;width:min(640px,calc(100% - 32px));
+  background:var(--ink);color:var(--cream);border-radius:14px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:10px;
+  align-items:center;justify-content:space-between;box-shadow:0 10px 30px var(--shadow)}
+.tray[hidden]{display:none}
+.tray p{font-size:14px}
+.tray .acts{display:flex;gap:8px;flex-wrap:wrap}
+.tray a,.tray button{font:inherit;font-size:14px;font-weight:700;min-height:40px;padding:0 14px;border-radius:8px;cursor:pointer;
+  display:inline-flex;align-items:center;text-decoration:none}
+.tray a{background:var(--sienna);color:#fff;border:0}
+.tray button{background:transparent;color:var(--cream);border:2px solid currentColor}
+#lb{position:fixed;inset:0;z-index:20;background:#0d0a0bd9;display:flex;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+#lb[hidden]{display:none}
+#lb figure{margin:0;background:#F7F4EF;border-radius:12px;padding:18px;max-width:min(92vw,620px);display:flex;flex-direction:column;gap:10px}
+#lb img{width:100%;height:auto;max-height:70vh;object-fit:contain;image-rendering:auto}
+#lb figcaption{color:#4A2436;font-size:15px;text-align:center}
+body{padding-bottom:110px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <nav aria-label="Main">
+    <a class="mark" href="index.html">INSIDE <i>the</i> HOUSE</a>
+    <ul>
+      <li><a href="index.html">Art</a></li>
+      <li><a href="commissions.html">Commissions</a></li>
+      <li><a class="join" href="join.html">Newsletter</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap" id="top">
+  <section class="eb" aria-labelledby="eb-h">
+    <div class="head">
+      <p class="typed">For clients · machine embroidery</p>
+      <h2 id="eb-h"><span class="t s">Pick</span> <span class="sm">an</span> <span class="t b">embroidery</span></h2>
+      <p>Browse the designs I can stitch onto your piece. Tap a picture to see it bigger, then tap <b>Pick</b> on the ones you like and send them to me with a commission inquiry. Or just tell me the design numbers (like <span class="typed">E0042</span>).</p>
+      <p>Sizes are the longest side of the design. Many come in several sizes, and colors can be changed to suit your fabric.</p>
+    </div>
+
+    <div class="eb-bar">
+      <input type="search" id="q" aria-label="Search designs" placeholder="Search: moon, dog, flowers, E0042…" autocomplete="off">
+      <select id="coll" aria-label="Collection"><option value="">All collections</option></select>
+      <select id="sort" aria-label="Sort">
+        <option value="r">Sort: featured</option>
+        <option value="name">Sort: name</option>
+        <option value="big">Sort: largest first</option>
+        <option value="small">Sort: smallest first</option>
+      </select>
+      <label class="typed chk"><input type="checkbox" id="mine"> Picked only</label>
+      <span id="count"></span>
+    </div>
+
+    <div class="eb-grid" id="grid" aria-live="polite"></div>
+    <p class="empty" id="empty" hidden>Nothing matches that search.</p>
+    <p class="empty" id="loading">Loading designs…</p>
+    <div class="more"><button class="btn alt" id="moreBtn" hidden>Show more designs</button></div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 The Art is Coming from Inside the House</span>
+  <ul>
+    <li><a href="commissions.html">Commissions</a></li>
+    <li><a href="https://www.instagram.com/artiscomingfrominsidethehouse/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://www.etsy.com/shop/ArtHouseArtQuilts" target="_blank" rel="noopener">Etsy</a></li>
+  </ul>
+</footer>
+
+</div>
+
+<div class="tray" id="tray" hidden>
+  <p id="trayTxt"></p>
+  <div class="acts">
+    <button type="button" id="clear">Clear</button>
+    <a id="ask" href="commissions.html#inquiry">Ask about these</a>
+  </div>
+</div>
+
+<div id="lb" hidden><figure><img alt=""><figcaption></figcaption></figure></div>
+
+<script src="assets/embroidery/designs.js"></script>
+<script>
+const D = window.DESIGNS || [], PAGE = 120;
+const $ = id => document.getElementById(id);
+const grid = $("grid"), q = $("q"), coll = $("coll"), sort = $("sort"), mine = $("mine");
+let shown = PAGE, list = [];
+
+// Picks are remembered in this browser only.
+let picks = new Set();
+try { picks = new Set(JSON.parse(localStorage.getItem("eb-picks") || "[]")); } catch {}
+const save = () => { try { localStorage.setItem("eb-picks", JSON.stringify([...picks])); } catch {} };
+
+const inch = mm => (mm / 25.4).toFixed(1) + "″";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const sizes = d => [...new Set(d.z.map(z => inch(Math.max(z[0], z[1]))))].join(", ");
+D.forEach(d => d.s = (d.r + " " + d.name + " " + d.set + " " + d.c).toLowerCase());
+(window.COLLECTIONS || []).forEach(c => coll.add(new Option(c, c)));
+$("loading").hidden = true;
+
+function card(d) {
+  const on = picks.has(d.r);
+  return `<article class="d${on ? " on" : ""}" data-r="${d.r}">
+    <button class="pic" type="button" aria-label="Larger picture of ${esc(d.name)}"><img src="${d.t}" alt="${esc(d.name)}" loading="lazy"></button>
+    <div class="m">
+      <span class="ref">${d.r}</span>
+      <span class="nm">${esc(d.name)}</span>
+      ${d.set && d.set !== d.name ? `<span class="st">${esc(d.set)}</span>` : ""}
+      <span class="sz">${d.z.length > 1 ? "Sizes" : "Size"}: ${sizes(d)}</span>
+      <div class="pick"><button type="button" aria-pressed="${on}">${on ? "Picked ✓" : "Pick"}</button></div>
+    </div></article>`;
+}
+function filter() {
+  const t = q.value.trim().toLowerCase(), c = coll.value, s = sort.value;
+  list = D.filter(d => (!c || d.c === c) && (!t || t.split(/\s+/).every(w => d.s.includes(w))) && (!mine.checked || picks.has(d.r)));
+  const area = d => d.w * d.h;
+  if (s === "name") list.sort((a, b) => a.name.localeCompare(b.name));
+  if (s === "big") list.sort((a, b) => area(b) - area(a));
+  if (s === "small") list.sort((a, b) => area(a) - area(b));
+  shown = PAGE; draw();
+}
+function draw() {
+  grid.innerHTML = list.slice(0, shown).map(card).join("");
+  $("count").textContent = list.length.toLocaleString() + " of " + D.length.toLocaleString();
+  $("empty").hidden = list.length > 0;
+  $("moreBtn").hidden = shown >= list.length;
+}
+function tray() {
+  const n = picks.size, refs = [...picks].sort();
+  $("tray").hidden = !n;
+  $("trayTxt").textContent = n + " picked: " + refs.slice(0, 6).join(", ") + (n > 6 ? "…" : "");
+  $("ask").href = "commissions.html?designs=" + encodeURIComponent(refs.join(",")) + "#inquiry";
+}
+[q, coll, sort, mine].forEach(el => el.addEventListener("input", filter));
+q.addEventListener("keydown", e => { if (e.key === "Escape") { q.value = ""; filter(); } });
+$("moreBtn").addEventListener("click", () => { shown += PAGE; draw(); });
+$("clear").addEventListener("click", () => { picks.clear(); save(); tray(); mine.checked ? filter() : draw(); });
+
+grid.addEventListener("click", e => {
+  const art = e.target.closest(".d"); if (!art) return;
+  const d = D.find(x => x.r === art.dataset.r);
+  if (e.target.closest(".pick")) {
+    picks.has(d.r) ? picks.delete(d.r) : picks.add(d.r); save(); tray();
+    art.outerHTML = card(d); return;
+  }
+  if (e.target.closest(".pic")) {
+    const lb = $("lb"), img = lb.querySelector("img");
+    img.src = d.t; img.alt = d.name;
+    lb.querySelector("figcaption").textContent = d.r + " · " + d.name + " · " + sizes(d);
+    lb.hidden = false;
+  }
+});
+$("lb").addEventListener("click", e => e.currentTarget.hidden = true);
+document.addEventListener("keydown", e => { if (e.key === "Escape") $("lb").hidden = true; });
+
+filter(); tray();
+</script>
+</body>
+</html>
