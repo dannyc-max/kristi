@@ -36,6 +36,26 @@ Each email has the same three parts, so it's quick to write:
 
 Skip a month if there's nothing to say. Sending less often keeps people opening the emails.
 
+### Contest, show and vendor deadlines
+
+These come from the Fashion & Craft Digest emails (Oct 26 and Nov 1). "Not announced" means the date is a guess from last year, so check before planning around it. Each one is also something to post about: entering, making the piece, and how it turned out.
+
+| Date | What | Notes | Post or email tie-in |
+|---|---|---|---|
+| **Fri Nov 6** | **Palm Beach Fine Craft Show**: application due | Juried; accepts wearable art. Show is Feb 12–14, 2027, West Palm Beach. | |
+| **Mid-Nov** (not announced) | **Color Me Asheville 2027**: team applications | Last year: info sessions Nov 6 and 8, apps due Nov 14. $300 per team, $200 for Goodwill materials, $500 audience award. colormeasheville.org | If you apply, it's a story for the Dec 1 email. |
+| **Fri Nov 20 – Fri Jan 22** | **ARTQUILTSstash 2027**: registration window | Listed by Smoky Mountain Quilters. Check that outside makers can enter. | |
+| **Sun Nov 29**, noon | **Local Cloth Holiday Make + Take** | 408 Depot St. A community event, not a contest. | Photos for the Dec 1 email. |
+| **Mon Nov 30** | **iD Emerging Designer Awards**: final deadline | Only for people with a fashion/textile degree from the last 7 years. | |
+| **Sat–Sun Dec 5–6** | **The Big Crafty** holiday show | Vendor apps closed Sept 20. Go to shop and meet vendors. | |
+| **Sun Jan 17** | **"Warp, Weft, and the Grid"** closes at the Asheville Art Museum | A fiber exhibition (not an open call). See it before it closes. | Instagram: what you saw. |
+| **Mon Feb 1 – Wed Mar 10** | **Fiber Reimagined V** (Fiber Art Now): submissions | Fiber and recycled/repurposed work. Fits the upcycling theme. | Pairs with the April Earth Day email. |
+| **Sun Feb 28** | **A' Fashion Design Award 2027**: last entry date | International; entry fee. | |
+| **Early–mid March** (not announced) | **The Big Crafty** summer 2027: vendor apps | Last year: applied Mar 16, decisions by Mar 22. Show is usually the second weekend of July. | |
+| **March** | **Mountain Air Market** (Love Shine Play festival): vendor apps open | 2026 market was July 24–26, Pack Square Park. | |
+| **March–April** (check site) | **World of WearableArt 2027**: entry deadlines | Free to enter. US garments ship to New Zealand in March. Show is Sept 16 – Oct 3, 2027. worldofwearableart.com | Process reels while you make it. |
+| **Sat May 8** | **Southern Highland Craft Guild Fiber Day** | Folk Art Center. | |
+
 ## 3. Upcycling posts from 2012: on brand
 
 Yes. Turning an old sweater into leg warmers or a man's shirt into a toddler dress is the same DIY, use-what-you-have, don't-ask-permission spirit as the rest of the brand. It also connects to what you already sell: the upcycled kids' dresses and the upcycled denim in Graybeard.
