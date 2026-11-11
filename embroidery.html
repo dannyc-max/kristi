@@ -79,10 +79,11 @@ body{padding-bottom:110px}
       <h2 id="eb-h"><span class="t s">Pick</span> <span class="sm">an</span> <span class="t b">embroidery</span></h2>
       <p>Browse the designs I can stitch onto your piece. Tap a picture to see it bigger, then tap <b>Pick</b> on the ones you like and send them to me with a commission inquiry. Or just tell me the design numbers (like <span class="typed">E0042</span>).</p>
       <p>Sizes are the longest side of the design. Many come in several sizes, and colors can be changed to suit your fabric.</p>
+      <p>Want a name, initials or a word stitched? Search <b>font</b> to see the lettering styles, then tell me the words with your inquiry. Font sizes are the height of a capital letter.</p>
     </div>
 
     <div class="eb-bar">
-      <input type="search" id="q" aria-label="Search designs" placeholder="Search: moon, dog, flowers, E0042…" autocomplete="off">
+      <input type="search" id="q" aria-label="Search designs" placeholder="Search: moon, dog, flowers, font, E0042…" autocomplete="off">
       <select id="coll" aria-label="Collection"><option value="">All collections</option></select>
       <select id="sort" aria-label="Sort">
         <option value="r">Sort: featured</option>
@@ -136,8 +137,9 @@ const save = () => { try { localStorage.setItem("eb-picks", JSON.stringify([...p
 
 const inch = mm => (mm / 25.4).toFixed(1) + "″";
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const sizes = d => [...new Set(d.z.map(z => inch(Math.max(z[0], z[1]))))].join(", ");
-D.forEach(d => d.s = (d.r + " " + d.name + " " + d.set + " " + d.c).toLowerCase());
+const sizes = d => d.ls ? d.ls.map(v => v + "″").join(", ")
+  : [...new Set(d.z.map(z => inch(Math.max(z[0], z[1]))))].join(", ");
+D.forEach(d => d.s = (d.r + " " + d.name + " " + d.set + " " + d.c + " " + (d.kw || "")).toLowerCase());
 (window.COLLECTIONS || []).forEach(c => coll.add(new Option(c, c)));
 $("loading").hidden = true;
 
@@ -149,7 +151,7 @@ function card(d) {
       <span class="ref">${d.r}</span>
       <span class="nm">${esc(d.name)}</span>
       ${d.set && d.set !== d.name ? `<span class="st">${esc(d.set)}</span>` : ""}
-      <span class="sz">${d.z.length > 1 ? "Sizes" : "Size"}: ${sizes(d)}</span>
+      <span class="sz">${d.ls ? "Letter heights" : d.z.length > 1 ? "Sizes" : "Size"}: ${sizes(d)}</span>
       <div class="pick"><button type="button" aria-pressed="${on}">${on ? "Picked ✓" : "Pick"}</button></div>
     </div></article>`;
 }

@@ -5,7 +5,7 @@ Static site, no build step. Open `index.html` in a browser.
 - `index.html`: home (art, process, Stitch Library teaser, shop, journal, fairs, newsletter sign-up)
 - `commissions.html`: custom work, how commissions are priced, and an inquiry form that emails Kristi right away (FormSubmit); its newsletter box adds the sender to the sign-up Google Sheet
 - `techniques.html`: Stitch Library, one card per technique from the landscape pattern
-- `embroidery.html`: **hidden** client page (not in the nav, tells search engines not to list it). 1,804 machine-embroidery designs from the Embroidery Browser, each with a number like E0042. Clients tap Pick, then "Ask about these" opens the Commissions form with the numbers filled in. Data lives in `assets/embroidery/designs.js` (no Mac file paths)
+- `embroidery.html`: **hidden** client page (not in the nav, tells search engines not to list it). 1,804 machine-embroidery designs from the Embroidery Browser plus 22 lettering fonts (search "font"), each with a number like E0042. Clients tap Pick, then "Ask about these" opens the Commissions form with the numbers filled in. Data lives in `assets/embroidery/designs.js` (no Mac file paths)
 - `dye.html`: Dye Notes (supplies, methods, dye log, truffle post). Add a log entry per batch
 - `assets/site.css`: shared styles and brand colors
 - `assets/logo/`: logo in SVG, transparent PNG and cream PNG
